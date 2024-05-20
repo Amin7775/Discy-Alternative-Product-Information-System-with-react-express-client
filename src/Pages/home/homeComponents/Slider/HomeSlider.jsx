@@ -53,8 +53,7 @@ const HomeSlider = () => {
               </h1>
 
               <p className="max-w-[80%] lg:max-w-[60%] mx-auto text-white/[.90]   text-base lg:text-xl drop-shadow-lg mt-5 lg:mt-7 text-center">
-                Explore a variety of products that offer similar features and
-                benefits. Find the best alternatives recommended by others.
+              Discover similar products with recommended alternatives.
               </p>
             </div>
           </div>
@@ -108,8 +107,7 @@ const HomeSlider = () => {
               </h1>
 
               <p className="max-w-[80%] lg:max-w-[60%] mx-auto  text-white/[.90]  text-base lg:text-xl drop-shadow-lg mt-5 lg:mt-7 text-center">
-                Elevate your selection with premium alternatives. Upgrade to
-                products that offer superior quality and performance.
+                Upgrade to products that offer superior quality and performance.
               </p>
             </div>
           </div>
