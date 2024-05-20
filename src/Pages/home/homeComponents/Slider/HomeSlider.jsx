@@ -32,33 +32,8 @@ const HomeSlider = () => {
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div
-            className="parallax-bg relative"
-            style={{
-              background: `url(${slider1})`,
-              height: "70vh",
-              display: "block",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-            }}
-          >
-            <div className="absolute h-full w-full bg-black opacity-10 lg:opacity-0"></div>
-            <div className="flex flex-col w-full lg:w-3/5 items-center justify-center h-full ">
-              <p className="max-w-[50%] mx-auto text-white/[.90]   text-lg lg:text-2xl font-semibold drop-shadow-lg mb-3 lg:mb-5 md:text-xl" >
-                DISCOVER
-              </p>
-              <h1 className="text-white text-3xl md:text-4xl lg:text-7xl font-bold drop-shadow-md   stroke-black text-center">
-                The Best Alternatives
-              </h1>
-
-              <p className="max-w-[80%] lg:max-w-[60%] mx-auto text-white/[.90]   text-base lg:text-xl drop-shadow-lg mt-5 lg:mt-7 text-center">
-              Discover similar products with recommended alternatives.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        {/* slide 2 */}
+        
+        {/* slide 1 */}
         <SwiperSlide>
           <div
             className="parallax-bg relative"
@@ -81,6 +56,33 @@ const HomeSlider = () => {
 
               <p className="max-w-[80%] lg:max-w-[60%] mx-auto text-white  text-base lg:text-xl drop-shadow-lg mt-5 lg:mt-7 text-center">
                 Discover answers to all your questions on a wide range of topics
+              </p>
+            </div>
+          </div>
+        </SwiperSlide>
+        {/* slider 2 */}
+        <SwiperSlide>
+          <div
+            className="parallax-bg relative"
+            style={{
+              background: `url(${slider1})`,
+              height: "70vh",
+              display: "block",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          >
+            <div className="absolute h-full w-full bg-black opacity-10 lg:opacity-0"></div>
+            <div className="flex flex-col w-full lg:w-3/5 items-center justify-center h-full ">
+              <p className="max-w-[50%] mx-auto text-white/[.90]   text-lg lg:text-2xl font-semibold drop-shadow-lg mb-3 lg:mb-5 md:text-xl" >
+                DISCOVER
+              </p>
+              <h1 className="text-white text-3xl md:text-4xl lg:text-7xl font-bold drop-shadow-md   stroke-black text-center">
+                The Best Alternatives
+              </h1>
+
+              <p className="max-w-[80%] lg:max-w-[60%] mx-auto text-white/[.90]   text-base lg:text-xl drop-shadow-lg mt-5 lg:mt-7 text-center">
+              Discover similar products with recommended alternatives.
               </p>
             </div>
           </div>

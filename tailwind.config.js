@@ -11,7 +11,10 @@ export default {
       },
       colors:{
         // for light theme
-        custom_Dark : "#282930"
+        custom_Dark : "#282930",
+        page_bg: '#F2F2F2',
+        // shared
+        custom_blue : '#4F69F6'
       }
     },
   },
