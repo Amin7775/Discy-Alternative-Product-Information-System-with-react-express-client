@@ -1,7 +1,10 @@
+import HomeSlider from "./homeComponents/Slider/HomeSlider";
+
 const Home = () => {
     return (
         <div className="">
-            This is home
+            {/* This is home */}
+            <HomeSlider></HomeSlider>
         </div>
     );
 };
