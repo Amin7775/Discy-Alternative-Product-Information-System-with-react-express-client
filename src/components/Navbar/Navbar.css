@@ -1,0 +1,8 @@
+#sidebar a:hover{
+    background-color: #1b1d20;
+  }
+
+#sidebar a.active {
+    color: white;
+    background-color: #1b1d20;
+}
