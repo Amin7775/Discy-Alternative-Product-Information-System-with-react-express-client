@@ -2,7 +2,7 @@ import CustomContainer from "../../components/Container/CustomContainer";
 import AboutDiscy from "./homeComponents/AboutDiscy/AboutDiscy";
 import Left from "./homeComponents/Main/Left";
 import Right from "./homeComponents/Main/Right";
-import Row1 from "./homeComponents/Row1/Row1";
+// import Row1 from "./homeComponents/Row1/Row1";
 import HomeBanner from "./homeComponents/Slider/Banner/HomeBanner";
 import HomeSlider from "./homeComponents/Slider/HomeSlider";
 

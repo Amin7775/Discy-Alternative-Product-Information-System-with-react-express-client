@@ -1,19 +1,29 @@
-import React from "react";
+// import React from "react";
 import logoImg from "./../../assets/images/Logo/logo.png";
 import { Link, NavLink } from "react-router-dom";
-import './Navbar.css'
+import "./Navbar.css";
+import { FaArrowCircleDown } from "react-icons/fa";
 
 const Navbar = () => {
-
-    const links = <>
-        <li className="font-bold"><NavLink to={'/'}>Home</NavLink></li>
-        <li className="font-bold"><NavLink to={'/queries'}>Queries</NavLink></li>
-        <li className="font-bold"><NavLink to={'/recommendationsForme'}>Recommendations For Me</NavLink></li>
-        <li className="font-bold"><NavLink to={'/myqueries'}>My Queries</NavLink></li>
-        <li className="font-bold"><NavLink to={'/myrecommendations'}>My Recommendations</NavLink></li>
-        
-        
+  const links = (
+    <>
+      <li className="font-bold">
+        <NavLink to={"/"}>Home</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to={"/queries"}>Queries</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to={"/recommendationsForme"}>Recommendations For Me</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to={"/myqueries"}>My Queries</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to={"/myrecommendations"}>My Recommendations</NavLink>
+      </li>
     </>
+  );
 
   return (
     <div className="bg-custom_Dark py-2">
@@ -38,7 +48,8 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-custom_Dark rounded-box w-52 opacity-90" id="sidebar"
+              className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-custom_Dark rounded-box w-52 opacity-90"
+              id="sidebar"
             >
               {/* links */}
               {links}
@@ -56,7 +67,38 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          {/* user */}
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost rounded-btn"
+            >
+              <div className="avatar p-1 border-2 rounded-full border-custom_blue relative">
+                <div className="w-8 rounded-full">
+                  <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+                <FaArrowCircleDown className="absolute text-white bg-custom_blue rounded-full overflow-hidden right-0 bottom-0"></FaArrowCircleDown>
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content z-[10] p-2 shadow rounded-box w-52 mt-4 bg-custom_Dark"
+            >
+              <li className="font-bold">
+                <Link to={"/myqueries"}>My Queries</Link>
+              </li>
+              <li className="font-bold">
+                <p>Logout</p>
+              </li>
+            </ul>
+          </div>
+          {/* login btn */}
+          <Link to={"/login"}>
+            <button className="bg-custom_blue px-7 py-1 rounded-sm hover:bg-[#1b1d20] transition-all duration-300 transform ease-in-out hover:scale-105 hover:border hover:border-white">
+              Login
+            </button>
+          </Link>
         </div>
       </div>
     </div>

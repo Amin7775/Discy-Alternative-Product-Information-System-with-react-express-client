@@ -17,7 +17,7 @@ const HomeStatistics = () => {
             {/* main statistics section*/}
             <div className="flex flex-col gap-3 text-white pt-5">
                 {/* Total Queries */}
-                <div className="bg-[#2f6ffd] flex items-center justify-between p-4 font-medium">
+                <div className="bg-[#2d6ff7] flex items-center justify-between p-4 font-medium">
                     {/* name */}
                     <div className="flex items-center gap-2 ">
                     <RiMessage2Line className="text-xl"></RiMessage2Line>
