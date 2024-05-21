@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom';
 import logoimg from './../../assets/images/Logo/logo.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
+
 
 
 const Register = () => {
+
+    // context
+    const {createUser,googleLogin} = useContext(AuthContext)
+
     const handleSubmit = e =>{
         e.preventDefault();
         const form = e.target;
@@ -15,6 +22,26 @@ const Register = () => {
             name,email,password,photoURL
         }
         console.log(registerInfo)
+
+        createUser(email,password)
+        .then(res => {
+            console.log(res.user)
+        })
+        .catch(err => {
+            console.log(err.message)
+        })
+    }
+
+    // google 
+    const handleGoogle =() =>{
+        console.log("clicked")
+        googleLogin()
+        .then(res =>{
+            console.log(res.user)
+        })
+        .catch(error => {
+            console.log(error.message)
+        })
     }
 
     return (
@@ -115,8 +142,16 @@ const Register = () => {
               </button>
             </div>
           </form>
+          {/* google register */}
+                <p className='text-sm my-2.5 text-center text-slate-500'>OR</p>
 
-          <p className="mt-10 text-center text-sm text-gray-500">
+          <button
+                onClick={handleGoogle}
+                className="flex w-full justify-center rounded-md bg-[#0F9D58] px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-custom_Dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom_blue transition-all duration-300 ease-in-out"
+              >
+                Register With Google
+              </button>
+          <p className="mt-5 text-center text-sm text-gray-500">
             Already a member?{' '}
             <Link to={'/login'} className="font-semibold leading-6 text-custom_blue hover:text-custom_Dark">
               Login
