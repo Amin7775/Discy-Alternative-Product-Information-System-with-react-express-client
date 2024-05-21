@@ -3,8 +3,24 @@ import logoImg from "./../../assets/images/Logo/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { FaArrowCircleDown } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
+  // context
+  const { user, logOut } = useContext(AuthContext);
+
+  // handleLogout
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        console.log("Logout Success");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   const links = (
     <>
       <li className="font-bold">
@@ -13,15 +29,27 @@ const Navbar = () => {
       <li className="font-bold">
         <NavLink to={"/queries"}>Queries</NavLink>
       </li>
-      <li className="font-bold">
-        <NavLink to={"/recommendationsForme"}>Recommendations For Me</NavLink>
-      </li>
-      <li className="font-bold">
-        <NavLink to={"/myqueries"}>My Queries</NavLink>
-      </li>
-      <li className="font-bold">
-        <NavLink to={"/myrecommendations"}>My Recommendations</NavLink>
-      </li>
+      {user ? (
+        <>
+          <li className="font-bold">
+            <NavLink to={"/recommendationsForme"}>
+              Recommendations For Me
+            </NavLink>
+          </li>
+          <li className="font-bold">
+            <NavLink to={"/myqueries"}>My Queries</NavLink>
+          </li>
+          <li className="font-bold">
+            <NavLink to={"/myrecommendations"}>My Recommendations</NavLink>
+          </li>
+        </>
+      ) : (
+        <>
+          <li className="font-bold">
+            <NavLink to={"/login"}>Login</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -69,36 +97,66 @@ const Navbar = () => {
         <div className="navbar-end">
           {/* user */}
           <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost rounded-btn"
-            >
-              <div className="avatar p-1 border-2 rounded-full border-custom_blue relative">
-                <div className="w-8 rounded-full">
-                  <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                </div>
-                <FaArrowCircleDown className="absolute text-white bg-custom_blue rounded-full overflow-hidden right-0 bottom-0"></FaArrowCircleDown>
+            {user && (
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost rounded-btn"
+              > 
+              <div className="hidden md:block lg:hidden xl:block">
+
+              <div className="flex flex-col justify-center items-start gap-1 ">
+                <p className="text-xs opacity-50">Welcome </p>
+                <p>{user?.displayName}</p>
               </div>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu dropdown-content z-[10] p-2 shadow rounded-box w-52 mt-4 bg-custom_Dark"
-            >
-              <li className="font-bold">
-                <Link to={"/myqueries"}>My Queries</Link>
-              </li>
-              <li className="font-bold">
-                <p>Logout</p>
-              </li>
-            </ul>
+              </div>
+                <div className="avatar p-1 border-2 rounded-full border-custom_blue relative">
+                  <div className="w-10 md:w-9 rounded-full">
+                    <img
+                      src={
+                        user?.photoURL
+                          ? `${user.photoURL}`
+                          : "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                      }
+                    />
+                  </div>
+                  <FaArrowCircleDown className="absolute text-white bg-custom_blue rounded-full overflow-hidden right-0 bottom-0"></FaArrowCircleDown>
+                </div>
+              </div>
+            )}
+            {user && (
+              <ul
+                tabIndex={0}
+                className="menu dropdown-content z-[10] p-2 shadow rounded-box w-52 mt-4 bg-custom_Dark"
+              >
+                <li className="font-bold">
+                  <Link to={"/myqueries"}>My Queries</Link>
+                </li>
+                <li className="font-bold">
+                  <p onClick={handleLogout}>Logout</p>
+                </li>
+              </ul>
+            )}
           </div>
           {/* login btn */}
-          <Link to={"/login"}>
-            <button className="bg-custom_blue px-7 py-1 rounded-sm hover:bg-[#1b1d20] transition-all duration-300 transform ease-in-out hover:scale-105 hover:border hover:border-white">
-              Login
-            </button>
-          </Link>
+          {user ? (
+            <>
+              <button
+                onClick={handleLogout}
+                className="bg-custom_blue px-7 py-1 rounded-sm hover:bg-[#1b1d20] transition-all duration-300 transform ease-in-out hover:scale-105 hover:border hover:border-white hidden md:block"
+              >
+                logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to={"/login"}>
+                <button className="bg-custom_blue px-7 py-1 rounded-sm hover:bg-[#1b1d20] transition-all duration-300 transform ease-in-out hover:scale-105 hover:border hover:border-white">
+                  Login
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
