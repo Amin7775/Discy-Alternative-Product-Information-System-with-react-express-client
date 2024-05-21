@@ -1,7 +1,7 @@
 import CustomContainer from "../../components/Container/CustomContainer";
-import customBanner3 from "./../../assets/images/Banner/customBanner3.svg";
 import customBanner2 from "./../../assets/images/Banner/customBanner2.svg";
-import Banner from "../../components/Banner/Banner";
+import { Link } from "react-router-dom";
+
 const MyQueries = () => {
   return (
     <div className="min-h-screen bg-page_bg">
@@ -22,7 +22,9 @@ const MyQueries = () => {
             <h3 className="text-lg">
                 Have Any Queries?
             </h3>
+            <Link to={'/addQueries'}>
             <button className="bg-custom_Dark px-5 rounded-sm py-1 hover:bg-page_bg hover:text-custom_Dark transition-all duration-300 ease-in-out transform hover:scale-105">Add a Query</button>
+            </Link>
           </div>
         </div>
       </div>

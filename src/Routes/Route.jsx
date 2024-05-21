@@ -8,6 +8,7 @@ import MyRecommendations from "../Pages/myRecommendations/MyRecommendations";
 import Login from "../Pages/login/Login";
 import Register from "../Pages/register/Register";
 import PrivateRoute from "./PrivateRoute";
+import AddQueries from "../Pages/AddQueries/AddQueries";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
         {
             path:'/register',
             element: <Register></Register>
+        },
+        {
+            path: '/addQueries',
+            element: <AddQueries></AddQueries>
         }
       ]
     },
