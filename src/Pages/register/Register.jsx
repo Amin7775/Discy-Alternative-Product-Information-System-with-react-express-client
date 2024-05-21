@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import logoimg from './../../assets/images/Logo/logo.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import moment from 'moment';
+import axios from 'axios';
 
 
 
@@ -9,6 +11,8 @@ const Register = () => {
 
     // context
     const {createUser,googleLogin,updateUser} = useContext(AuthContext)
+    // user registration time
+    const registerTime= moment().format("do MMM YYYY, h:mma");
 
     const handleSubmit = e =>{
         e.preventDefault();
@@ -19,7 +23,8 @@ const Register = () => {
         const name = form.name.value
         
         const registerInfo = {
-            name,email,password,photoURL
+            name,email,registerTime,totalQueries : 0,
+            totalRecommendations : 0 
         }
         console.log(registerInfo)
 
@@ -29,6 +34,10 @@ const Register = () => {
             updateUser(name,photoURL)
             .then(()=>{
                 console.log("Update User Success", res)
+                axios.post('http://localhost:5000/users',registerInfo)
+                .then((res) => {
+                  console.log("DB update success", res)
+                })
             })
             .catch(error=>{
                 console.log(error.message)
@@ -46,6 +55,17 @@ const Register = () => {
         googleLogin()
         .then(res =>{
             console.log(res.user)
+            const registerInfo = {
+              name : res?.user?.displayName,
+              email: res?.user?.email,
+              registerTime,
+              totalQueries : 0,
+              totalRecommendations : 0 
+          }
+            axios.post('http://localhost:5000/users',registerInfo)
+                .then(() => {
+                  console.log("DB update success")
+                })
         })
         .catch(error => {
             console.log(error.message)
