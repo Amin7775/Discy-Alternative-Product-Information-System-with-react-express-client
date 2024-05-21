@@ -8,7 +8,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 const Register = () => {
 
     // context
-    const {createUser,googleLogin} = useContext(AuthContext)
+    const {createUser,googleLogin,updateUser} = useContext(AuthContext)
 
     const handleSubmit = e =>{
         e.preventDefault();
@@ -25,6 +25,14 @@ const Register = () => {
 
         createUser(email,password)
         .then(res => {
+            // update user
+            updateUser(name,photoURL)
+            .then(()=>{
+                console.log("Update User Success", res)
+            })
+            .catch(error=>{
+                console.log(error.message)
+            })
             console.log(res.user)
         })
         .catch(err => {
