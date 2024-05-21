@@ -3,6 +3,7 @@ import Banner from "../../components/Banner/Banner";
 import CustomContainer from "../../components/Container/CustomContainer";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import axios from "axios";
 
 const AddQueries = () => {
   // context
@@ -29,9 +30,16 @@ const AddQueries = () => {
         productImage,
         queryTitle,
         boycottingReason,
-        submissionTime
+        submissionTime,
+        recommendationCount : 0
     }
     console.log(submitInfo)
+
+    axios.post("http://localhost:5000/queries",submitInfo)
+    .then(res=>{
+      console.log(res)
+    })
+    form.reset()
   };
  
   return (
