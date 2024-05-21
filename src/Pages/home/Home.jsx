@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import CustomContainer from "../../components/Container/CustomContainer";
 import AboutDiscy from "./homeComponents/AboutDiscy/AboutDiscy";
 import Left from "./homeComponents/Main/Left";
@@ -5,8 +6,10 @@ import Right from "./homeComponents/Main/Right";
 // import Row1 from "./homeComponents/Row1/Row1";
 import HomeBanner from "./homeComponents/Slider/Banner/HomeBanner";
 import HomeSlider from "./homeComponents/Slider/HomeSlider";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Home = () => {
+
   return (
     <div className="pb-10 bg-page_bg">
       {/* This is home */}

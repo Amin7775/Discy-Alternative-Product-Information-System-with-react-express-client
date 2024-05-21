@@ -73,11 +73,11 @@ const Register = () => {
                 <label htmlFor="password" className="block text-base font-medium leading-6 text-gray-900">
                   Password
                 </label>
-                <div className="text-sm">
+                {/* <div className="text-sm">
                   <a href="#" className="font-semibold text-custom_blue hover:text-custom_Dark">
                     Forgot password?
                   </a>
-                </div>
+                </div> */}
               </div>
               <div className="mt-2">
                 <input
