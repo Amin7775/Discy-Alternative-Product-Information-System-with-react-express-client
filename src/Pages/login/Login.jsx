@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logoimg from './../../assets/images/Logo/logo.png'
 
 
@@ -24,7 +25,7 @@ const Login = () => {
             />
             </div>
           <h2 className="mt-4 text-center text-3xl font-bold leading-9 tracking-tight text-custom_blue">
-            Log in to your account
+            Log In To Your Account
           </h2>
         </div>
 
@@ -82,9 +83,9 @@ const Login = () => {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{' '}
-            <a href="#" className="font-semibold leading-6 text-custom_blue hover:text-custom_Dark">
+            <Link to={'/register'} className="font-semibold leading-6 text-custom_blue hover:text-custom_Dark">
               Register
-            </a>
+            </Link>
           </p>
         </div>
       </div>
