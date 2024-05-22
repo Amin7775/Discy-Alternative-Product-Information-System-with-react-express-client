@@ -2,7 +2,7 @@ import connectImg from './../../../../assets/images/illustrations/undraw_online_
 
 const AboutDiscy = () => {
   return (
-    <div className="max-w-[88%] md:max-w-2xl lg:max-w-6xl xl:max-w-7xl  mx-auto py-5">
+    <div className="max-w-[88%] md:max-w-2xl lg:max-w-6xl xl:max-w-7xl  mx-auto pt-5 pb-2">
       <h1 className="text-4xl font-medium text-center my-5">
         Share & grow the world's knowledge!
       </h1>

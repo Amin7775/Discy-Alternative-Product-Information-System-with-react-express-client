@@ -7,8 +7,10 @@ import Right from "./homeComponents/Main/Right";
 import HomeBanner from "./homeComponents/Slider/Banner/HomeBanner";
 import HomeSlider from "./homeComponents/Slider/HomeSlider";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
+  const loadedQueries = useLoaderData() 
 
   return (
     <div className="pb-10 bg-page_bg">
@@ -18,10 +20,11 @@ const Home = () => {
       <AboutDiscy></AboutDiscy>
       {/* rows/main content */}
       <CustomContainer>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 border-2">
+      <h1 className="text-2xl md:text-3xl font-medium  mb-5 text-custom_blue">Recent Queries</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* left side */}
-          <div className="lg:col-span-2 border-2 p-3 lg:p-5">
-            <Left></Left>
+          <div className="lg:col-span-2">
+            <Left loadedQueries={loadedQueries}></Left>
           </div>
           {/* right side */}
           <div className="">

@@ -1,29 +1,23 @@
-// user on - 
-// all queries
-// 
-
 import { RiQuestionAnswerLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-const OneColumnCard = ({ query }) => {
-  // console.log(query)
-  const {
-    _id,
-    userName,
-    userEmail,
-    userImg,
-    productName,
-    productBrand,
-    productImage,
-    queryTitle,
-    boycottingReason,
-    submissionTime,
-    recommendationCount,
-  } = query;
-  console.log(productBrand);
-  return (
-    <div className="bg-white px-6 md:px-10 py-8 flex flex-col-reverse lg:flex-row gap-6 rounded-md drop-shadow-sm">
-      <div className=" lg:w-3/5 xl:w-3/4 ">
+const RecentQueriesCard = ({query}) => {
+    const {
+        _id,
+        userName,
+        userEmail,
+        userImg,
+        productName,
+        productBrand,
+        productImage,
+        queryTitle,
+        boycottingReason,
+        submissionTime,
+        recommendationCount,
+      } = query;
+    return (
+        <div className="bg-white px-6 py-8 flex flex-col-reverse lg:flex-row gap-6 rounded-md drop-shadow-sm">
+      <div className=" lg:w-3/5 ">
         {/* user info */}
         <div className="flex gap-2 items-center flex-wrap">
           <div className="flex gap-2 items-center">
@@ -50,7 +44,7 @@ const OneColumnCard = ({ query }) => {
 
         <div className="my-2 text-custom_Dark flex flex-col gap-1.5">
           {/* query title */}
-          <h1 className="text-xl md:text-3xl font-medium mt-1 mb-2 md:mb-3">{queryTitle}</h1>
+          <h1 className="text-xl md:text-2xl font-medium mt-1 mb-2 ">{queryTitle}</h1>
           {/* <h3 className="font-medium  text-gray-600">Product Details - </h3> */}
 
           <h3 className="text-sm md:text-base  font-medium  text-gray-600">
@@ -89,7 +83,7 @@ const OneColumnCard = ({ query }) => {
         </div>
       </div>
     </div>
-  );
+    );
 };
 
-export default OneColumnCard;
+export default RecentQueriesCard;

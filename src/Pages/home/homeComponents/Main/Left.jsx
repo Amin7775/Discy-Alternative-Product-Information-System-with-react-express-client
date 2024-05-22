@@ -1,8 +1,12 @@
+import OneColumnCard from "../../../../components/QueriCards/OneColumnCard/OneColumnCard";
+import RecentQueries from "../RecentQueries/RecentQueries";
 
-const Left = () => {
+const Left = ({loadedQueries}) => {
+
     return (
-        <div>
-            This is left
+        <div className="grid grid-cols-1">
+            <RecentQueries loadedQueries={loadedQueries}></RecentQueries>
+
         </div>
     );
 };
