@@ -61,7 +61,7 @@ const Queries = () => {
               </div>
             </form>
           </div>
-          <p className="text-xs font-medium text-slate-400 text-center mt-1">
+          <p className="text-xs font-medium text-slate-400 lg:text-center mt-2 mb-5 lg:mt-1">
             Empty search for all queries
           </p>
         </div>
