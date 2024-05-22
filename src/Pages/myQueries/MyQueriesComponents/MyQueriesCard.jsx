@@ -1,3 +1,4 @@
+import axios from "axios";
 import { RiQuestionAnswerLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
@@ -15,6 +16,14 @@ const MyQueriesCard = ({query}) => {
         submissionTime,
         recommendationCount,
       } = query;
+
+    //   delete
+    const handleDelete = id =>{
+        axios.delete(`http://localhost:5000/queries/delete/${id}`)
+        .then(res => {
+            console.log(res)
+        })
+    }
     return (
         <div className="bg-white px-6 md:px-10 py-8 flex flex-col-reverse lg:flex-row gap-6 rounded-md drop-shadow-sm">
         <div className=" lg:w-3/5 xl:w-3/4 ">
@@ -80,11 +89,11 @@ const MyQueriesCard = ({query}) => {
                   </button>
                 </Link>
                 {/* btn for delete*/}
-                <Link className="w-full md:w-auto" to={`/queryDetails/${_id}`}>
-                  <button  className="bg-custom_Dark text-white px-6 py-2 text-sm font-medium rounded-sm hover:bg-page_bg hover:text-custom_Dark transition-all duration-300 ease-in-out transform hover:scale-105 hover:border drop-shadow-md hover:border-custom_Dark w-full md:w-auto">
+                <div className="w-full md:w-auto">
+                  <button onClick={()=>handleDelete(_id)} className="bg-custom_Dark text-white px-6 py-2 text-sm font-medium rounded-sm hover:bg-page_bg hover:text-custom_Dark transition-all duration-300 ease-in-out transform hover:scale-105 hover:border drop-shadow-md hover:border-custom_Dark w-full md:w-auto">
                     Delete Query
                   </button>
-                </Link>
+                </div>
               </div>
             </div>
           </div>
