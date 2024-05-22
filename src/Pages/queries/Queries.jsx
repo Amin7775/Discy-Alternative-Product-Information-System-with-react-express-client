@@ -5,21 +5,66 @@ import { useLoaderData } from "react-router-dom";
 import { CiGrid2H, CiGrid2V } from "react-icons/ci";
 import OneColumnCard from "../../components/QueriCards/OneColumnCard/OneColumnCard";
 import ThreeColumnCard from "../../components/QueriCards/ThreeColumnCard/ThreeColumnCard";
+import axios from "axios";
 const Queries = () => {
   const loadedQueries = useLoaderData();
   const [queries, setQueries] = useState(loadedQueries);
   const [gridLayout, setGridLayout] = useState(1);
-
+  // const [searchTextField,setSearchTextField]=useState('')
   console.log(queries.length);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const searchText = form.searchText.value;
+
+    if (searchText == "") {
+      axios.get("http://localhost:5000/queries").then((res) => {
+        setQueries(res.data);
+      });
+    } else {
+      axios
+        .get(`http://localhost:5000/queries?search=${searchText}`)
+        .then((res) => {
+          setQueries(res.data);
+        });
+    }
+  };
 
   const handleLayout = (number) => {
     setGridLayout(number);
   };
   return (
     <div className="min-h-screen bg-page_bg">
-      <Banner heading={"All Queries"}></Banner>
+      <div>
+        <Banner heading={"All Queries"}></Banner>
+      </div>
       {/* custom container */}
       <CustomContainer>
+        {/* search bar */}
+        <div className="">
+          <div className="flex justify-center mt-5 mb-1">
+            <form
+              onSubmit={handleSearch}
+              className="w-full lg:w-1/2 border border-gray-400 rounded-md drop-shadow-sm"
+            >
+              <div className="flex">
+                <input
+                  type="text"
+                  name="searchText"
+                  className="text-lg py-2  rounded-l-md rounded-r-none px-5 w-full focus:outline-1 "
+                  placeholder="Search by product name"
+                />
+                <button className="px-5 rounded-r-md rounded-l-none bg-custom_Dark text-white w-1/3 md:w-1/4 hover:bg-custom_blue transition-all duration-300 ease-in-out">
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+          <p className="text-xs font-medium text-slate-400 text-center mt-1">
+            Empty search for all queries
+          </p>
+        </div>
         <div className="mt-1 mb-6 flex justify-between items-center">
           <p className="text-end text-sm font-medium text-slate-500 opacity-80">
             Showing {queries.length} queries
@@ -56,17 +101,20 @@ const Queries = () => {
         {gridLayout == 1 ? (
           <>
             <div className="grid grid-cols-1 gap-10 pb-10">
-                {
-                    queries?.map(query => <OneColumnCard key={query._id} query={query}></OneColumnCard>)
-                }
+              {queries?.map((query) => (
+                <OneColumnCard key={query._id} query={query}></OneColumnCard>
+              ))}
             </div>
           </>
         ) : (
           <>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 pb-10">
-                {
-                    queries?.map(query => <ThreeColumnCard key={query._id} query={query}></ThreeColumnCard>)
-                }
+              {queries?.map((query) => (
+                <ThreeColumnCard
+                  key={query._id}
+                  query={query}
+                ></ThreeColumnCard>
+              ))}
             </div>
           </>
         )}
