@@ -10,6 +10,7 @@ import Register from "../Pages/register/Register";
 import PrivateRoute from "./PrivateRoute";
 import AddQueries from "../Pages/AddQueries/AddQueries";
 import QueryDetails from "../Pages/QueryDetails/QueryDetails";
+import UpdateQueries from "../Pages/UpdateQueries/UpdateQueries";
 
 const router = createBrowserRouter([
     {
@@ -54,7 +55,13 @@ const router = createBrowserRouter([
             path: '/queryDetails/:productId',
             element : <QueryDetails></QueryDetails>,
             loader: ({params})=>fetch(`http://localhost:5000/queries/${params.productId}`)
-        }
+        },
+        {
+            path: '/queryUpdate/:productId',
+            element : <UpdateQueries></UpdateQueries>,
+            loader: ({params})=>fetch(`http://localhost:5000/queries/${params.productId}`)
+        },
+        
       ]
     },
 
