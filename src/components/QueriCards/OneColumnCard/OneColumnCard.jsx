@@ -71,8 +71,9 @@ const OneColumnCard = ({ query }) => {
               </p>
             </div>
             <div className="w-full md:w-auto">
-              <Link>
-                <button className="bg-custom_Dark text-white px-6 py-2 text-sm font-medium rounded-sm hover:bg-page_bg hover:text-custom_Dark transition-all duration-300 ease-in-out transform hover:scale-105 hover:border drop-shadow-md hover:border-custom_Dark w-full md:w-auto">
+              {/* btn for recommendation / view details*/}
+              <Link to={`/queryDetails/${_id}`}>
+                <button  className="bg-custom_Dark text-white px-6 py-2 text-sm font-medium rounded-sm hover:bg-page_bg hover:text-custom_Dark transition-all duration-300 ease-in-out transform hover:scale-105 hover:border drop-shadow-md hover:border-custom_Dark w-full md:w-auto">
                   Recommend
                 </button>
               </Link>
