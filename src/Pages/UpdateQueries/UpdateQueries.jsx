@@ -1,10 +1,12 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Banner from "../../components/Banner/Banner";
 import CustomContainer from "../../components/Container/CustomContainer";
 import axios from "axios";
 
 const UpdateQueries = () => {
   const loadedData = useLoaderData();
+  const params = useParams()
+  console.log(params)
   const {
     productName,
     productBrand,
@@ -31,7 +33,11 @@ const UpdateQueries = () => {
       boycottingReason,
     };
 
-    form.reset();
+    axios.patch(`http://localhost:5000/queries/update/${params?.productId}`, submitInfo).
+    then((res) => {
+      console.log(res)
+    });
+    //   form.reset();
   };
   return (
     <div className="min-h-screen bg-page_bg">
