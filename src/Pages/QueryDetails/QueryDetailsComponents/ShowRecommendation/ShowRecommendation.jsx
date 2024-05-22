@@ -8,7 +8,7 @@ const ShowRecommendation = ({ query }) => {
   const [recommendations,setrecommendations]= useState([])
   
   useEffect(()=>{
-    axios.get("http://localhost:5000/recommendations")
+    axios.get( `http://localhost:5000/recommendations/${_id}`)
     .then(res=>{ 
       setrecommendations(res.data)
     })
@@ -20,7 +20,7 @@ const ShowRecommendation = ({ query }) => {
       <h1 className="text-xl md:text-2xl text-center font-medium">
         Recommendations
       </h1>
-      {recommendationCount < 0 ? (
+      {recommendationCount == 0 ? (
         <>
           <div className="h-1 border-b my-6"></div>
           <h1 className="text-center text-gray-400">
