@@ -4,6 +4,7 @@ import CustomContainer from "../../components/Container/CustomContainer";
 import { useLoaderData } from "react-router-dom";
 import { CiGrid2H, CiGrid2V } from "react-icons/ci";
 import OneColumnCard from "../../components/QueriCards/OneColumnCard/OneColumnCard";
+import ThreeColumnCard from "../../components/QueriCards/ThreeColumnCard/ThreeColumnCard";
 const Queries = () => {
   const loadedQueries = useLoaderData();
   const [queries, setQueries] = useState(loadedQueries);
@@ -62,7 +63,11 @@ const Queries = () => {
           </>
         ) : (
           <>
-            <div>2</div>
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 pb-10">
+                {
+                    queries?.map(query => <ThreeColumnCard key={query._id} query={query}></ThreeColumnCard>)
+                }
+            </div>
           </>
         )}
       </CustomContainer>

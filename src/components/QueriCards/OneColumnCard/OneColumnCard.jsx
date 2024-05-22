@@ -1,6 +1,4 @@
-// user on - 
-// all queries
-// 
+// user on - all queries
 
 import { RiQuestionAnswerLine } from "react-icons/ri";
 import { Link } from "react-router-dom";

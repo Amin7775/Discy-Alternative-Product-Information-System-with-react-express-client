@@ -6,7 +6,6 @@ const Left = ({loadedQueries}) => {
     return (
         <div className="grid grid-cols-1">
             <RecentQueries loadedQueries={loadedQueries}></RecentQueries>
-
         </div>
     );
 };
