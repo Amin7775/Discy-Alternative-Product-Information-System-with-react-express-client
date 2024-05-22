@@ -1,7 +1,19 @@
 import { TbDirectionSignFilled } from "react-icons/tb";
 import { WiDirectionRight } from "react-icons/wi";
 
-const ShowRecommendationUsers = () => {
+const ShowRecommendationUsers = ({recommendation}) => {
+  const {recommendedProductName,
+    recommendedProductBrand,
+    recommendedProductImage,
+    recommendTitle,
+    recommendReason,
+    queryID,
+    productName,
+    queryUserEmail,
+    queryUserName,
+    recommenderEmail,
+    recommenderName,
+    recommendationSubmissionTime,} = recommendation;
   return (
     <div>
       {/* information section */}

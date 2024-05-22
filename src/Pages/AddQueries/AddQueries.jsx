@@ -33,12 +33,16 @@ const AddQueries = () => {
         submissionTime,
         recommendationCount : 0
     }
-    console.log(submitInfo)
+    // console.log(submitInfo)
 
     axios.post("http://localhost:5000/queries",submitInfo)
     .then(res=>{
       console.log(res)
     })
+    let currentUser = { email: user?.email };
+    axios.patch("http://localhost:5000/users/query", currentUser).then(() => {
+      //console.log(res)
+    });
     form.reset()
   };
  

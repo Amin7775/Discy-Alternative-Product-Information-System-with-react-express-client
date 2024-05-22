@@ -1,24 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 import moment from "moment";
+import axios from "axios";
 
 const AddRecommendations = ({ query }) => {
   // user
   const { user } = useContext(AuthContext);
   // loaded data
-  const {
-    _id,
-    userName,
-    userEmail,
-    userImg,
-    productName,
-    productBrand,
-    productImage,
-    queryTitle,
-    boycottingReason,
-    submissionTime,
-    recommendationCount,
-  } = query;
+  const { _id, userName, userEmail, productName } = query;
 
   // moment js time
   const recommendationSubmissionTime = moment().format("do MMM YYYY, h:mma");
@@ -31,23 +20,42 @@ const AddRecommendations = ({ query }) => {
     const recommendedProductImage = form.recommendedProductImage.value;
     const recommendTitle = form.recommendTitle.value;
     const recommendReason = form.recommendReason.value;
-    
+
     const recommendInfo = {
       recommendedProductName,
       recommendedProductBrand,
       recommendedProductImage,
       recommendTitle,
       recommendReason,
-      queryID : _id,
+      queryID: _id,
       productName,
-      queryUserEmail : userEmail,
-      queryUserName : userName,
-      recommenderEmail : user?.email,
-      recommenderName : user?.displayName,
-      recommendationSubmissionTime
+      queryUserEmail: userEmail,
+      queryUserName: userName,
+      recommenderEmail: user?.email,
+      recommenderName: user?.displayName,
+      recommendationSubmissionTime,
     };
 
     console.log(recommendInfo);
+
+    // post
+    axios
+      .post("http://localhost:5000/recommendations", recommendInfo)
+      .then(res => {
+        console.log(res)
+      });
+    // incrementing user recommendation
+    let currentUser = { email: user?.email };
+    axios.patch("http://localhost:5000/users", currentUser).then(() => {
+      //console.log(res)
+    });
+    // incrementing query recommendations
+    const queryID = {
+      Qid : _id
+    }
+    axios.patch("http://localhost:5000/queries", queryID).then((res) => {
+    //   console.log("from queries update", res);
+    });
   };
   return (
     <div className="bg-white px-6 md:px-10 py-8  rounded-md drop-shadow-sm">
