@@ -18,7 +18,7 @@ const QueryDetails = () => {
             <UserDetails query={loadedData}></UserDetails>
             </div>
             <div className="my-10">
-            <ShowRecommendation></ShowRecommendation>
+            <ShowRecommendation query={loadedData}></ShowRecommendation>
             </div>
             </CustomContainer>
         </div>
