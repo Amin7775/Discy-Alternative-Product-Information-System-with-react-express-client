@@ -27,7 +27,7 @@ const ShowRecommendationUsers = ({recommendation}) => {
         <p className="text-sm -mt-2 md:-mt-0 mb-2 pl-12 md:mb-0 md:pl-0">on {recommendationSubmissionTime}</p>
       </div>
       {/* comment section */}
-      <div className="bg-page_bg dark:bg-slate-500 px-5 py-5 flex flex-col-reverse md:flex-row rounded-lg">
+      <div className="bg-page_bg dark:bg-slate-500 px-5 py-5 flex flex-col-reverse lg:flex-row rounded-lg gap-4">
         {/* text */}
         <div className="flex-1 flex flex-col gap-1">
           <h1 className="text-2xl font-medium mb-2">
@@ -40,8 +40,8 @@ const ShowRecommendationUsers = ({recommendation}) => {
           <p className="text-sm font-medium">{recommendReason}</p>
         </div>
         {/* img section */}
-        <div className="w-full md:w-1/5 max-h-44 bg-white dark:bg-opacity-50 py-3 px-1">
-            <img src={recommendedProductImage  ? `${recommendedProductImage}` : "https://i.ibb.co/9sNq2GK/macbook-pro.jpg"} className="object-contain w-full max-h-36 md:h-full" alt="" />
+        <div className="w-full lg:w-1/5 max-h-44 bg-white dark:bg-opacity-50 py-3 px-1">
+            <img src={recommendedProductImage  ? `${recommendedProductImage}` : "https://i.ibb.co/9sNq2GK/macbook-pro.jpg"} className="object-contain w-full max-h-40 lg:max-h-36 " alt="" />
         </div>
       </div>
       <div className="h-1 border-b mt-6 mb-2"></div>
