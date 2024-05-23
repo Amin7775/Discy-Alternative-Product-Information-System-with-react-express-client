@@ -8,12 +8,12 @@ const ShowRecommendation = ({ query }) => {
   const [recommendations,setrecommendations]= useState([])
   
   useEffect(()=>{
-    axios.get( `http://localhost:5000/recommendations/${_id}`)
+    axios.get( `https://discy-server.vercel.app/recommendations/${_id}`)
     .then(res=>{ 
       setrecommendations(res.data)
     })
   },[])
-  console.log(recommendations)
+  // console.log(recommendations)
 
   return (
     <div className="bg-white px-6 md:px-10 py-8  rounded-md drop-shadow-sm dark:bg-dark_div_bg">

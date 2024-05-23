@@ -1,4 +1,4 @@
-import customBanner2 from "./../../assets/images/Banner/customBanner2.svg";
+import customBanner2 from "./../../assets/images/Banner/customBanner2.jpg";
 
 const Banner = ({ heading }) => {
   return (

@@ -10,23 +10,23 @@ const Right = () => {
     const [queryStats,setQueryStats]=useState([])
     const [recommendationStats,setRecommendationStats] = useState([])
     const {user} = useContext(AuthContext)
-    console.log(user)
+    // console.log(user)
     
     useEffect(()=>{
         // for user stats
-        axios.get("http://localhost:5000/users/stats")
+        axios.get("https://discy-server.vercel.app/users/stats")
         .then(res=>{
             const data = res.data
             setUserStats(data)
         })
         //for query champions
-        axios.get("http://localhost:5000/users/sortQuery")
+        axios.get("https://discy-server.vercel.app/users/sortQuery")
         .then(res=>{
             const data = res.data
             setQueryStats(data)
         })
         //for recommendation heroes
-        axios.get("http://localhost:5000/users/sortRecommendations")
+        axios.get("https://discy-server.vercel.app/users/sortRecommendations")
         .then(res=>{
             const data = res.data
             setRecommendationStats(data)

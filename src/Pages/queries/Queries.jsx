@@ -12,7 +12,7 @@ const Queries = () => {
   const [queries, setQueries] = useState(loadedQueries);
   const [gridLayout, setGridLayout] = useState(1);
   // const [searchTextField,setSearchTextField]=useState('')
-  console.log(queries.length);
+  // console.log(queries.length);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -20,12 +20,12 @@ const Queries = () => {
     const searchText = form.searchText.value;
 
     if (searchText == "") {
-      axios.get("http://localhost:5000/queries").then((res) => {
+      axios.get("https://discy-server.vercel.app/queries").then((res) => {
         setQueries(res.data);
       });
     } else {
       axios
-        .get(`http://localhost:5000/queries?search=${searchText}`)
+        .get(`https://discy-server.vercel.app/queries?search=${searchText}`)
         .then((res) => {
           setQueries(res.data);
         });

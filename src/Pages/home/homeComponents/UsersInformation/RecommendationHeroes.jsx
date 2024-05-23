@@ -4,7 +4,7 @@ import { GiNinjaHeroicStance } from "react-icons/gi";
 import RecommendationHeroesCard from "./RecommendationHeroesCard";
 
 const RecommendationHeroes = ({recommendationStats}) => {
-    console.log(recommendationStats)
+    // console.log(recommendationStats)
     return (
         <div className="bg-white dark:bg-dark_div_bg p-5 rounded-sm">
             <div className="flex gap-1 items-center dark:text-dark_text_1">

@@ -14,7 +14,7 @@ const AddQueries = () => {
   const { user } = useContext(AuthContext);
   // moment js time
   let submissionTime = moment().format('Do MMMM YYYY, h:mm a');
-  console.log(submissionTime)
+  // console.log(submissionTime)
   // handle submit action
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,11 +40,11 @@ const AddQueries = () => {
     };
     // console.log(submitInfo)
 
-    axios.post("http://localhost:5000/queries", submitInfo).then((res) => {
-      console.log(res);
+    axios.post("https://discy-server.vercel.app/queries", submitInfo).then((res) => {
+      // console.log(res);
     });
     let currentUser = { email: user?.email };
-    axios.patch("http://localhost:5000/users/query", currentUser).then(() => {
+    axios.patch("https://discy-server.vercel.app/users/query", currentUser).then(() => {
       //console.log(res)
       Swal.fire({
         title: "Query Added Successfully",

@@ -12,13 +12,13 @@ const MyRecommendations = () => {
   const [loadedData, setLoadedData] = useState([]);
   let { user } = useContext(AuthContext);
   let currentEmail = user?.email;
-  console.log(currentEmail);
+  // console.log(currentEmail);
 
   // load data
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/recommendations/myRecommendations?email=${currentEmail}`,{withCredentials: true}
+        `https://discy-server.vercel.app/recommendations/myRecommendations?email=${currentEmail}`,{withCredentials: true}
       )
       .then((res) => {
         setLoadedData(res.data);
@@ -37,18 +37,18 @@ const MyRecommendations = () => {
 
   //   handleDelete
   const handleDelete = (id,StatsQueryID) => {
-    console.log("clicked", id);
+    // console.log("clicked", id);
     axios
-      .delete(`http://localhost:5000/recommendations/delete/${id}`)
+      .delete(`https://discy-server.vercel.app/recommendations/delete/${id}`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         const remaining = loadedData.filter((data) => data._id != id);
         setLoadedData(remaining,);
         const queryID = {
             Qid : StatsQueryID
           }
-          axios.patch("http://localhost:5000/queries/decrement", queryID).then((res) => {
-            console.log("from queries update", res);
+          axios.patch("https://discy-server.vercel.app/queries/decrement", queryID).then((res) => {
+            // console.log("from queries update", res);
           });
       });
   };

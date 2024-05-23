@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 
 const QueryDetails = () => {
   const loadedData = useLoaderData();
-  console.log(loadedData);
+  // console.log(loadedData);
   // const param = useParams()
   // console.log(param)
   return (

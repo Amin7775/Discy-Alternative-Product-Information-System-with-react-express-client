@@ -41,20 +41,20 @@ const AddRecommendations = ({ query }) => {
 
     // post
     axios
-      .post("http://localhost:5000/recommendations", recommendInfo)
+      .post("https://discy-server.vercel.app/recommendations", recommendInfo)
       .then(res => {
-        console.log(res)
+        // console.log(res)
       });
     // incrementing user recommendation
     let currentUser = { email: user?.email };
-    axios.patch("http://localhost:5000/users", currentUser).then(() => {
+    axios.patch("https://discy-server.vercel.app/users", currentUser).then(() => {
       //console.log(res)
     });
     // incrementing query recommendations
     const queryID = {
       Qid : _id
     }
-    axios.patch("http://localhost:5000/queries", queryID)
+    axios.patch("https://discy-server.vercel.app/queries", queryID)
     .then((res) => {
       Swal.fire({
         position: "center",

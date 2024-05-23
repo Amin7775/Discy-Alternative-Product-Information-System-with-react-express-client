@@ -15,7 +15,7 @@ const QueryDetailsCard = ({ query }) => {
         submissionTime,
         recommendationCount,
       } = query;
-      console.log(productBrand);
+      // console.log(productBrand);
       return (
         <div className="bg-white px-6 md:px-10 py-8 flex flex-col-reverse lg:flex-row gap-6 rounded-md drop-shadow-sm dark:bg-dark_div_bg">
           <div className=" lg:w-3/5 xl:w-3/4 ">

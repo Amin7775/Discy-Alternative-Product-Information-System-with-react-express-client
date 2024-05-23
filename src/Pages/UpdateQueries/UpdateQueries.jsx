@@ -20,7 +20,7 @@ const UpdateQueries = () => {
     queryTitle,
     boycottingReason,
   } = loadedData;
-  console.log(loadedData);
+  // console.log(loadedData);
   // handle submit action
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +39,7 @@ const UpdateQueries = () => {
       boycottingReason,
     };
 
-    axios.patch(`http://localhost:5000/queries/update/${params?.productId}`, submitInfo).
+    axios.patch(`https://discy-server.vercel.app/queries/update/${params?.productId}`, submitInfo).
     then((res) => {
       // console.log(res)
       Swal.fire({

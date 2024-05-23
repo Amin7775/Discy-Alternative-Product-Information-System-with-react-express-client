@@ -20,7 +20,7 @@ const MyQueriesCard = ({query,queriesData,setQueriesData}) => {
 
     //   delete
     const handleDelete = id =>{
-        axios.delete(`http://localhost:5000/queries/delete/${id}`)
+        axios.delete(`https://discy-server.vercel.app/queries/delete/${id}`)
         .then(res => {
           Swal.fire({
             position: "center",

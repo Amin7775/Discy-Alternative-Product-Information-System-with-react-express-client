@@ -22,12 +22,12 @@ const router = createBrowserRouter([
         {
             path:'/',
             element: <Home></Home>,
-            loader : ()=>fetch('http://localhost:5000/limitedQueries')
+            loader : ()=>fetch('https://discy-server.vercel.app/limitedQueries')
         },
         {
             path:'/queries',
             element: <Queries></Queries>,
-            loader : ()=>fetch('http://localhost:5000/queries')
+            loader : ()=>fetch('https://discy-server.vercel.app/queries')
         },
         {
             path:'/recommendationsForme',
@@ -56,12 +56,12 @@ const router = createBrowserRouter([
         {
             path: '/queryDetails/:productId',
             element : <PrivateRoute><QueryDetails></QueryDetails></PrivateRoute>,
-            loader: ({params})=>fetch(`http://localhost:5000/queries/${params.productId}`)
+            loader: ({params})=>fetch(`https://discy-server.vercel.app/queries/${params.productId}`)
         },
         {
             path: '/queryUpdate/:productId',
             element : <PrivateRoute><UpdateQueries></UpdateQueries></PrivateRoute>,
-            loader: ({params})=>fetch(`http://localhost:5000/queries/${params.productId}`)
+            loader: ({params})=>fetch(`https://discy-server.vercel.app/queries/${params.productId}`)
         },
       ]
     },

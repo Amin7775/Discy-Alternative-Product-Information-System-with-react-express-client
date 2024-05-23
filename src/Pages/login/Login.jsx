@@ -45,7 +45,7 @@ const Login = () => {
 
   // google
   const handleGoogle = () => {
-    console.log("clicked");
+    // console.log("clicked");
     googleLogin()
       .then((res) => {
         Swal.fire({

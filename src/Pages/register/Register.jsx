@@ -54,7 +54,7 @@ const Register = () => {
               };
 
               axios
-                .post("http://localhost:5000/users", registerInfo)
+                .post("https://discy-server.vercel.app/users", registerInfo)
                 .then((res) => {
                   // console.log("DB update success", res);
                   navigate(location?.state ? location?.state : '/')
@@ -89,7 +89,7 @@ const Register = () => {
 
   // google
   const handleGoogle = () => {
-    console.log("clicked");
+    // console.log("clicked");
     googleLogin()
       .then((res) => {
         Swal.fire({
@@ -112,7 +112,7 @@ const Register = () => {
             totalQueries: 0,
             totalRecommendations: 0,
           };
-          axios.post("http://localhost:5000/users", registerInfo).then(() => {
+          axios.post("https://discy-server.vercel.app/users", registerInfo).then(() => {
             // console.log("DB update success")
           });
           navigate(location?.state ? location?.state : '/')

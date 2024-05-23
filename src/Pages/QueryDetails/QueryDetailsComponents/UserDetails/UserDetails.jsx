@@ -7,7 +7,7 @@ const UserDetails = ({ query }) => {
   const [userData, setUserData] = useState();
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/user/queryUser?email=${userEmail}`)
+      .get(`https://discy-server.vercel.app/user/queryUser?email=${userEmail}`)
       .then((res) => {
         setUserData(res.data);
       });

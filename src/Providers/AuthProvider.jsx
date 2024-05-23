@@ -64,15 +64,15 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       if(currentUser){
         // const loggedUser={email : currentUser?.email}
-        axios.post('http://localhost:5000/jwt',loggedUser,{withCredentials:true})
+        axios.post('https://discy-server.vercel.app/jwt',loggedUser,{withCredentials:true})
         .then(res=>{
-          console.log(res.data)
+          // console.log(res.data)
           setLoading(false);
         })
       }else{
-        axios.post('http://localhost:5000/logout',loggedUser,{withCredentials:true})
+        axios.post('https://discy-server.vercel.app/logout',loggedUser,{withCredentials:true})
         .then(res=>{
-          console.log(res.data)
+          // console.log(res.data)
         })
       }
       

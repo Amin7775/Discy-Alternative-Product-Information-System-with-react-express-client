@@ -12,12 +12,12 @@ const RecommendationsForMe = () => {
   const [loadedData, setLoadedData] = useState([]);
   let { user } = useContext(AuthContext);
   let currentEmail = user?.email;
-  console.log(currentEmail);
+  // console.log(currentEmail);
 
   // load data
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/recommendations?email=${currentEmail}`,{withCredentials: true})
+      .get(`https://discy-server.vercel.app/recommendations?email=${currentEmail}`,{withCredentials: true})
       .then((res) => {
         setLoadedData(res.data);
       });

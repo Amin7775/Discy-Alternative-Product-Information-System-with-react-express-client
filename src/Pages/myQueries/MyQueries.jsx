@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import CustomContainer from "../../components/Container/CustomContainer";
-import customBanner2 from "./../../assets/images/Banner/customBanner2.svg";
+import customBanner2 from "./../../assets/images/Banner/customBanner2.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -14,12 +14,12 @@ const MyQueries = () => {
   const [queriesData, setQueriesData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/queries/myQueries?email=${currentUser}`,{withCredentials:true})
+      .get(`https://discy-server.vercel.app/queries/myQueries?email=${currentUser}`,{withCredentials:true})
       .then((res) => {
         setQueriesData(res.data);
       });
   }, [currentUser]);
-  console.log(queriesData);
+  // console.log(queriesData);
   return (
     <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg">
       <Helmet>
