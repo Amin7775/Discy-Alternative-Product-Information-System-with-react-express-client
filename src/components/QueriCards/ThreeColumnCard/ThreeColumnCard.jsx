@@ -25,7 +25,7 @@ const ThreeColumnCard = ({ query }) => {
               <div className="flex gap-2 items-center flex-wrap">
                 <div className="flex gap-2 items-center">
                   <div className="avatar p-0.5 md:p-1 border-2 rounded-full border-custom_blue ">
-                    <div className="w-9 rounded-full ">
+                    <div className="w-6 md:w-9 rounded-full ">
                       <img
                         src={
                           userImg
