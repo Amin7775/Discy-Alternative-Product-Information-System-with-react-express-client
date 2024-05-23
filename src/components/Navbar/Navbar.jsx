@@ -1,24 +1,31 @@
 // import React from "react";
 import logoImg from "./../../assets/images/Logo/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { FaArrowCircleDown } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   // context
   const { user, logOut } = useContext(AuthContext);
 
   // handleLogout
   const handleLogout = () => {
-    logOut()
-      .then(() => {
-        console.log("Logout Success");
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+    logOut()   
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Logout Success",
+        showConfirmButton: false,
+        timer: 1500
+    })
+    .then(()=>{
+        navigate('/')
+    })
+  
   };
 
   const links = (

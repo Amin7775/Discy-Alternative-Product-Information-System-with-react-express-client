@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logoimg from './../../assets/images/Logo/logo.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 
-const Login = () => {
+const Login = () => { 
+  const location = useLocation()
+  const navigate = useNavigate()
 
     const {googleLogin,loginUser} = useContext(AuthContext)
 
@@ -14,13 +17,30 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
 
-        console.log(email,password)
+        // console.log(email,password)
         loginUser(email,password)
         .then(res =>{
-            console.log("Login success", res.user)
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Login Success",
+            showConfirmButton: false,
+            timer: 1500
+          })
+          .then(()=>{
+            navigate(location?.state ? location?.state : '/')
+          })
         })
         .catch(error => {
-            console.log(error.message)
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Login Failed",
+            text : "There was an error while logging in",
+            footer: `${error.message}`,
+            showConfirmButton: true,
+            // timer: 1500
+          });
         })
     }
 
@@ -29,10 +49,27 @@ const Login = () => {
         console.log("clicked")
         googleLogin()
         .then(res =>{
-            console.log(res.user)
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Login Success",
+            showConfirmButton: false,
+            timer: 1500
+          })
+          .then(()=>{
+            navigate(location?.state ? location?.state : '/')
+          })
         })
         .catch(error => {
-            console.log(error.message)
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Login Failed",
+            text : "There was an error while logging in",
+            footer: `${error.message}`,
+            showConfirmButton: true,
+            // timer: 1500
+          });
         })
     }
 

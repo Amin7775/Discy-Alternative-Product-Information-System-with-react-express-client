@@ -33,11 +33,11 @@ const router = createBrowserRouter([
         },
         {
             path:'/myqueries',
-            element: <MyQueries></MyQueries>
+            element: <PrivateRoute><MyQueries></MyQueries></PrivateRoute>
         },
         {
             path:'/myrecommendations',
-            element: <MyRecommendations></MyRecommendations>
+            element: <PrivateRoute><MyRecommendations></MyRecommendations></PrivateRoute>
         },
         {
             path:'/login',
@@ -49,19 +49,18 @@ const router = createBrowserRouter([
         },
         {
             path: '/addQueries',
-            element: <AddQueries></AddQueries>
+            element:<PrivateRoute> <AddQueries></AddQueries></PrivateRoute>
         },
         {
             path: '/queryDetails/:productId',
-            element : <QueryDetails></QueryDetails>,
+            element : <PrivateRoute><QueryDetails></QueryDetails></PrivateRoute>,
             loader: ({params})=>fetch(`http://localhost:5000/queries/${params.productId}`)
         },
         {
             path: '/queryUpdate/:productId',
-            element : <UpdateQueries></UpdateQueries>,
+            element : <PrivateRoute><UpdateQueries></UpdateQueries></PrivateRoute>,
             loader: ({params})=>fetch(`http://localhost:5000/queries/${params.productId}`)
         },
-        
       ]
     },
 

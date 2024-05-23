@@ -51,13 +51,7 @@ const AuthProvider = ({ children }) => {
 
   // Logout
   const logOut = () => {
-    signOut(auth)
-      .then(() => {
-        console.log("logout Success");
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+    return signOut(auth)
   };
 
 
