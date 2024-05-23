@@ -6,7 +6,14 @@ import { IoStatsChart } from "react-icons/io5";
 import { RiMessage2Line, RiQuestionAnswerLine } from "react-icons/ri";
 import { TfiStatsUp } from "react-icons/tfi";
 
-const HomeStatistics = () => {
+const HomeStatistics = ({userStats}) => {
+
+    const {
+        totalNumberOfUsers,
+        totalNumberOfQueries,
+        totalNumberOfRecommendations
+    }= userStats
+
     return (
         <div className="bg-white p-5 rounded-sm">
             <div className="flex gap-1 items-center ">
@@ -27,7 +34,7 @@ const HomeStatistics = () => {
                     </div>
                     {/* Stats */}
                     <div className="mr-1">
-                        5
+                        {totalNumberOfQueries}
                     </div>
                 </div>
                 {/* Total Recommendations */}
@@ -41,7 +48,7 @@ const HomeStatistics = () => {
                     </div>
                     {/* Stats */}
                     <div className="mr-1">
-                        65
+                        {totalNumberOfRecommendations}
                     </div>
                 </div>
                 {/* Total Users */}
@@ -55,7 +62,7 @@ const HomeStatistics = () => {
                     </div>
                     {/* Stats */}
                     <div className="mr-1">
-                        6
+                        {totalNumberOfUsers}
                     </div>
                 </div>
             </div>
