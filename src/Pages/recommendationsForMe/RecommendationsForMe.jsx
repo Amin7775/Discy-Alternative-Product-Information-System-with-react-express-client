@@ -16,7 +16,7 @@ const RecommendationsForMe = () => {
   // load data
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/recommendations?email=${currentEmail}`)
+      .get(`http://localhost:5000/recommendations?email=${currentEmail}`,{withCredentials: true})
       .then((res) => {
         setLoadedData(res.data);
       });

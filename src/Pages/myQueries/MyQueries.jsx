@@ -13,7 +13,7 @@ const MyQueries = () => {
   const [queriesData, setQueriesData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/queries/myQueries?email=${currentUser}`)
+      .get(`http://localhost:5000/queries/myQueries?email=${currentUser}`,{withCredentials:true})
       .then((res) => {
         setQueriesData(res.data);
       });

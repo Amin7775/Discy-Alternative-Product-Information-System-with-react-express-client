@@ -17,7 +17,7 @@ const MyRecommendations = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/recommendations/myRecommendations?email=${currentEmail}`
+        `http://localhost:5000/recommendations/myRecommendations?email=${currentEmail}`,{withCredentials: true}
       )
       .then((res) => {
         setLoadedData(res.data);

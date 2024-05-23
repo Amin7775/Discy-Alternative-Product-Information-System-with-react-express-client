@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/addQueries',
-            element:<PrivateRoute> <AddQueries></AddQueries></PrivateRoute>
+            element:<PrivateRoute><AddQueries></AddQueries></PrivateRoute>
         },
         {
             path: '/queryDetails/:productId',
