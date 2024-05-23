@@ -44,26 +44,35 @@ const RecommendationsForMe = () => {
           ) : (
             <section className="py-10">
               <div className="overflow-x-auto">
-                <table className="table table-xs md:table-sm lg:table-lg border border-black">
-                  {/* head */}
-                  <thead className="border border-black">
-                    <tr className="border border-black">
-                    <th className= "text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">
-                        <label>Serial No</label>
-                      </th>
-                    <th className=" text-xs md:text-sm lg:text-base  text-center">Product Name </th>
-                    <th className=" text-xs md:text-sm lg:text-base  text-center ">
-                        Recommender
-                      </th>
-                    <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">Recommended</th>
-                    <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">Time</th>
-                    <th className=" text-xs md:text-sm lg:text-base  text-center">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {/* row 1 */}
-                    {loadedData?.length != 0 &&
-                      loadedData?.map((singleData) => (
+                {loadedData?.length != 0 ? (
+                  <table className="table table-xs md:table-sm lg:table-lg border border-black">
+                    {/* head */}
+                    <thead className="border border-black">
+                      <tr className="border border-black">
+                        <th className="text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">
+                          <label>Serial No</label>
+                        </th>
+                        <th className=" text-xs md:text-sm lg:text-base  text-center">
+                          Product Name{" "}
+                        </th>
+                        <th className=" text-xs md:text-sm lg:text-base  text-center ">
+                          Recommender
+                        </th>
+                        <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">
+                          Recommended
+                        </th>
+                        <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">
+                          Time
+                        </th>
+                        <th className=" text-xs md:text-sm lg:text-base  text-center">
+                          Actions
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {/* row 1 */}
+
+                      {loadedData?.map((singleData) => (
                         <tr
                           key={singleData._id}
                           className="border border-black"
@@ -90,7 +99,7 @@ const RecommendationsForMe = () => {
                           <img src={`${singleData?.recommendedProductImage}`} className="h-20 w-full" alt="" />
                           
                         </td> */}
-                          
+
                           <td className="hidden sm:table-cell text-center text-wrap">
                             {singleData?.recommendationSubmissionTime}
                           </td>
@@ -105,9 +114,9 @@ const RecommendationsForMe = () => {
                           </td>
                         </tr>
                       ))}
-                  </tbody>
-                  {/* foot */}
-                  {/* <tfoot>
+                    </tbody>
+                    {/* foot */}
+                    {/* <tfoot>
                   <tr>
                     <th></th>
                     <th></th>
@@ -116,7 +125,16 @@ const RecommendationsForMe = () => {
                     <th></th>
                   </tr>
                 </tfoot> */}
-                </table>
+                  </table>
+                ) :
+                <>
+                <div className=" min-h-[40vh] w-full flex items-center justify-center mt-10">
+            <div className="min-h-full ">
+                <p className="text-lg md:text-2xl font-medium text-center">You have not received any recommendations yet!</p>
+                <p className="text-lg md:text-2xl font-medium text-center mt-2">Please wait for recommendations</p>
+            </div>
+            </div>
+            </>}
               </div>
             </section>
           )}
