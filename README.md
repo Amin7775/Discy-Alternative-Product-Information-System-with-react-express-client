@@ -1,8 +1,37 @@
-# React + Vite
+# Project Title - Discy
+## Project Link : https://ceramings-77.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Built with    | 
+------------  |   
+React JS      |  
+Tailwind Css  |  
+Daisy UI      | 
+Firebase      | 
+Express js    | 
+MongoDB       | 
+JWT           | 
 
-Currently, two official plugins are available:
+##
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Discy is an 'Alternative Product Information System' focused website. Here users can add/update/delete their queries about any product. Others can view these queries and suggest alternative products. 
+
+
+## Some of the Features of the project:
+- Search functionality 
+- Real time data load 
+- Responsive for all devices
+- Dark and light theme
+- Login/register using any email, google account  
+- Alerts for key functionalities. With this the website become more interactive for the users as they get notified for everything they do. 
+
+## Some of the npm Packages that are used on this project:
+- Swiper js
+- React Helmet
+- Moment js
+- react-icons
+- sweetalert2
+- axios
+
+
+
+
