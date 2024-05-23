@@ -5,6 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import moment from "moment";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const location = useLocation()
@@ -131,6 +132,9 @@ const Register = () => {
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-page_bg dark:bg-dark_page_bg">
+      <Helmet>
+        <title>Discy - Register</title>
+      </Helmet>
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <div className="bg-custom_Dark p-5 w-20 rounded-full mx-auto border-2 border-custom_blue">
           <img className="mx-auto h-10 w-auto" src={logoimg} alt="DISCY" />

@@ -4,6 +4,7 @@ import QueryDetailsCard from "./QueryDetailsComponents/QueryDetailsCard";
 import UserDetails from "./QueryDetailsComponents/UserDetails/UserDetails";
 import ShowRecommendation from "./QueryDetailsComponents/ShowRecommendation/ShowRecommendation";
 import AddRecommendations from "./QueryDetailsComponents/AddRecommendations/AddRecommendations";
+import { Helmet } from "react-helmet-async";
 
 const QueryDetails = () => {
   const loadedData = useLoaderData();
@@ -12,6 +13,9 @@ const QueryDetails = () => {
   // console.log(param)
   return (
     <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg dark:text-gray-200">
+      <Helmet>
+        <title>Discy - Query Details</title>
+      </Helmet>
       <CustomContainer>
         {/* query details details */}
         <QueryDetailsCard query={loadedData}></QueryDetailsCard>

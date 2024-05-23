@@ -6,6 +6,7 @@ import { CiGrid2H, CiGrid2V } from "react-icons/ci";
 import OneColumnCard from "../../components/QueriCards/OneColumnCard/OneColumnCard";
 import ThreeColumnCard from "../../components/QueriCards/ThreeColumnCard/ThreeColumnCard";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 const Queries = () => {
   const loadedQueries = useLoaderData();
   const [queries, setQueries] = useState(loadedQueries);
@@ -36,6 +37,9 @@ const Queries = () => {
   };
   return (
     <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg">
+      <Helmet>
+        <title>Discy - All Queries</title>
+      </Helmet>
       <div>
         <Banner heading={"All Queries"}></Banner>
       </div>

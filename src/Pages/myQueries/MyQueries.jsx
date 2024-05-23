@@ -6,6 +6,7 @@ import axios from "axios";
 import { AuthContext } from "../../Providers/AuthProvider";
 import OneColumnCard from "../../components/QueriCards/OneColumnCard/OneColumnCard";
 import MyQueriesCard from "./MyQueriesComponents/MyQueriesCard";
+import { Helmet } from "react-helmet-async";
 
 const MyQueries = () => {
   const { user } = useContext(AuthContext);
@@ -21,6 +22,9 @@ const MyQueries = () => {
   console.log(queriesData);
   return (
     <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg">
+      <Helmet>
+        <title>Discy - My Queries</title>
+      </Helmet>
       {/* <img src={customBanner2}  className="w-full" alt="" /> */}
       <div
         className="h-[300px]"

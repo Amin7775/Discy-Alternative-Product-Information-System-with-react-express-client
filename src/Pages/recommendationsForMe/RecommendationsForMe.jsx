@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const RecommendationsForMe = () => {
   const [loading, setLoading] = useState(true);
@@ -34,6 +35,9 @@ const RecommendationsForMe = () => {
 
   return (
     <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg dark:text-gray-200">
+      <Helmet>
+        <title>Discy - Recommendations For Me</title>
+      </Helmet>
       <Banner heading={"Recommendations for me"}></Banner>
       <CustomContainer>
         <div>

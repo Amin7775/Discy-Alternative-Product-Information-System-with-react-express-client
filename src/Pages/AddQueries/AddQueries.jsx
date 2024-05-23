@@ -6,13 +6,14 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AddQueries = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   // context
   const { user } = useContext(AuthContext);
-   // moment js time
-   const submissionTime = moment().format("do MMM YYYY, h:mma");
+  // moment js time
+  const submissionTime = moment().format("do MMM YYYY, h:mma");
 
   // handle submit action
   const handleSubmit = (e) => {
@@ -20,28 +21,28 @@ const AddQueries = () => {
     const form = e.target;
     const productName = form.productName.value;
     const productBrand = form.productBrand.value;
-    const productImage = form.productImage.value || "https://i.ibb.co/9sNq2GK/macbook-pro.jpg";
+    const productImage =
+      form.productImage.value || "https://i.ibb.co/9sNq2GK/macbook-pro.jpg";
     const queryTitle = form.queryTitle.value;
     const boycottingReason = form.boycottingReason.value;
 
     const submitInfo = {
-        userName : user?.displayName,
-        userEmail : user?.email,
-        userImg : user?.photoURL,
-        productName,
-        productBrand,
-        productImage,
-        queryTitle,
-        boycottingReason,
-        submissionTime,
-        recommendationCount : 0
-    }
+      userName: user?.displayName,
+      userEmail: user?.email,
+      userImg: user?.photoURL,
+      productName,
+      productBrand,
+      productImage,
+      queryTitle,
+      boycottingReason,
+      submissionTime,
+      recommendationCount: 0,
+    };
     // console.log(submitInfo)
 
-    axios.post("http://localhost:5000/queries",submitInfo)
-    .then(res=>{
-      console.log(res)
-    })
+    axios.post("http://localhost:5000/queries", submitInfo).then((res) => {
+      console.log(res);
+    });
     let currentUser = { email: user?.email };
     axios.patch("http://localhost:5000/users/query", currentUser).then(() => {
       //console.log(res)
@@ -50,20 +51,23 @@ const AddQueries = () => {
         showDenyButton: true,
         // showCancelButton: true,
         confirmButtonText: "Go to My Queries",
-        denyButtonText: `Add Another`
+        denyButtonText: `Add Another`,
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          navigate("/myqueries")
+          navigate("/myqueries");
         } else if (result.isDenied) {
-          form.reset()
+          form.reset();
         }
       });
     });
   };
- 
+
   return (
     <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg">
+      <Helmet>
+        <title>Discy - Add Queries</title>
+      </Helmet>
       <Banner heading={"Add Queries"}></Banner>
       <CustomContainer>
         <form className="space-y-6 my-8" onSubmit={handleSubmit}>

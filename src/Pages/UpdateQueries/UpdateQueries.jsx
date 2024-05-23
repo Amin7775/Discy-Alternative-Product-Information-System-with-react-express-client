@@ -3,6 +3,7 @@ import Banner from "../../components/Banner/Banner";
 import CustomContainer from "../../components/Container/CustomContainer";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const UpdateQueries = () => {
   const loadedData = useLoaderData();
@@ -61,6 +62,9 @@ const UpdateQueries = () => {
   };
   return (
     <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg">
+      <Helmet>
+        <title>Discy - Update Queries</title>
+      </Helmet>
       <Banner heading={"Update Query"}></Banner>
       <CustomContainer>
         <form className="space-y-6 my-8" onSubmit={handleSubmit}>
