@@ -69,7 +69,7 @@ const AddRecommendations = ({ query }) => {
     });
   };
   return (
-    <div className="bg-white px-6 md:px-10 py-8  rounded-md drop-shadow-sm">
+    <div className="bg-white px-6 md:px-10 py-8  rounded-md drop-shadow-sm dark:bg-dark_div_bg">
       <h1 className="text-xl md:text-2xl text-center font-medium">
         Add Recommendation
       </h1>
@@ -79,7 +79,7 @@ const AddRecommendations = ({ query }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-5 w-full  mx-auto">
           {/* Product name */}
           <div>
-            <label className="block text-base font-medium leading-6 text-gray-900">
+            <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
               Product Name
             </label>
             <div className="mt-2">
@@ -94,7 +94,7 @@ const AddRecommendations = ({ query }) => {
           </div>
           {/* Product Brand */}
           <div>
-            <label className="block text-base font-medium leading-6 text-gray-900">
+            <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
               Product Brand
             </label>
             <div className="mt-2">
@@ -109,7 +109,7 @@ const AddRecommendations = ({ query }) => {
           </div>
           {/* Product Image */}
           <div>
-            <label className="block text-base font-medium leading-6 text-gray-900">
+            <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
               Product Image
             </label>
             <div className="mt-2">
@@ -124,7 +124,7 @@ const AddRecommendations = ({ query }) => {
           </div>
           {/* Product Brand */}
           <div>
-            <label className="block text-base font-medium leading-6 text-gray-900">
+            <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
               Recommendation Title
             </label>
             <div className="mt-2">
@@ -139,7 +139,7 @@ const AddRecommendations = ({ query }) => {
           </div>
           {/* Boycotting Reason Details */}
           <div className="lg:col-span-2">
-            <label className="block text-base font-medium leading-6 text-gray-900">
+            <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
               Recommendation reason
             </label>
             <div className="mt-2">
@@ -157,7 +157,7 @@ const AddRecommendations = ({ query }) => {
           <div className="">
             <button
               type="submit"
-              className="flex w-full lg:w-1/2 justify-center rounded-md bg-custom_blue px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-custom_Dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom_blue transition-all duration-300 ease-in-out mt-1"
+              className="flex w-full lg:w-1/2 justify-center rounded-md bg-custom_blue px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-custom_Dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom_blue transition-all duration-300 ease-in-out mt-1 dark:hover:bg-slate-500"
             >
               Add Query
             </button>

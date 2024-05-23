@@ -60,7 +60,7 @@ const UpdateQueries = () => {
     //   form.reset();
   };
   return (
-    <div className="min-h-screen bg-page_bg">
+    <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg">
       <Banner heading={"Update Query"}></Banner>
       <CustomContainer>
         <form className="space-y-6 my-8" onSubmit={handleSubmit}>
@@ -68,7 +68,7 @@ const UpdateQueries = () => {
           <div className="grid grid-cols-1 gap-5 w-full lg:w-1/2 mx-auto">
             {/* Product name */}
             <div>
-              <label className="block text-base font-medium leading-6 text-gray-900">
+              <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
                 Product Name
               </label>
               <div className="mt-2">
@@ -84,7 +84,7 @@ const UpdateQueries = () => {
             </div>
             {/* Product Brand */}
             <div>
-              <label className="block text-base font-medium leading-6 text-gray-900">
+              <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
                 Product Brand
               </label>
               <div className="mt-2">
@@ -100,7 +100,7 @@ const UpdateQueries = () => {
             </div>
             {/* Product Image */}
             <div>
-              <label className="block text-base font-medium leading-6 text-gray-900">
+              <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
                 Product Image
               </label>
               <div className="mt-2">
@@ -116,7 +116,7 @@ const UpdateQueries = () => {
             </div>
             {/* Product Brand */}
             <div>
-              <label className="block text-base font-medium leading-6 text-gray-900">
+              <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
                 Query Title
               </label>
               <div className="mt-2">
@@ -132,7 +132,7 @@ const UpdateQueries = () => {
             </div>
             {/* Boycotting Reason Details */}
             <div>
-              <label className="block text-base font-medium leading-6 text-gray-900">
+              <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
                 Boycotting Reason
               </label>
               <div className="mt-2">
@@ -151,7 +151,7 @@ const UpdateQueries = () => {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-custom_blue px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-custom_Dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom_blue transition-all duration-300 ease-in-out mt-1"
+                className="flex w-full justify-center rounded-md bg-custom_blue px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-custom_Dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom_blue transition-all duration-300 ease-in-out mt-1 dark:hover:bg-slate-500"
               >
                 Update Query
               </button>

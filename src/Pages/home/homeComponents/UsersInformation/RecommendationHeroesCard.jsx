@@ -13,8 +13,8 @@ const RecommendationHeroesCard = ({stats}) => {
               </div>
             </div>
             <div className="flex flex-col justify-between">
-            <p className="text-sm text-custom_blue   font-semibold">{stats.name}</p>
-            <p className="text-xs text-gray-500 font-medium mt-1">Recommendations :  {stats.totalRecommendations}</p>
+            <p className="text-sm text-custom_blue dark:text-dark_text_1  font-semibold">{stats.name}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 font-medium mt-1">Recommendations :  {stats.totalRecommendations}</p>
             </div>
           </div>
         </div>

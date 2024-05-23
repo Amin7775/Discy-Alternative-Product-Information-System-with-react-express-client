@@ -53,7 +53,7 @@ const MyRecommendations = () => {
   };
 
   return (
-    <div className="min-h-screen bg-page_bg">
+    <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg dark:text-gray-200">
       <Banner heading={"Recommendations for me"}></Banner>
       <CustomContainer>
         <div>
@@ -68,26 +68,26 @@ const MyRecommendations = () => {
                   <table className="table table-xs md:table-sm lg:table-lg border border-black">
                     {/* head */}
                     <thead className="border border-black">
-                      <tr className="border border-black">
-                        <th className="text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">
+                      <tr className="border border-black dark:border-gray-500 dark:border-2">
+                        <th className="text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell dark:text-gray-200">
                           <label>Serial No</label>
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center dark:text-gray-200">
                           Product{" "}
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center  hidden sm:table-cell">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center  hidden sm:table-cell dark:text-gray-200">
                           Recommended To
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center ">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center  dark:text-gray-200">
                           Recommended
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell dark:text-gray-200">
                           Time
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center dark:text-gray-200">
                           Action
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center dark:text-gray-200">
                           Details
                         </th>
                       </tr>
@@ -98,7 +98,7 @@ const MyRecommendations = () => {
                       {loadedData?.map((singleData) => (
                         <tr
                           key={singleData._id}
-                          className="border border-black"
+                          className="border border-black dark:border-gray-500 dark:border-2"
                         >
                           <th className="hidden sm:table-cell">
                             <label>

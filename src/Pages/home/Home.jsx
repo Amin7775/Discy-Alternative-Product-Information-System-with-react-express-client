@@ -13,14 +13,14 @@ const Home = () => {
   const loadedQueries = useLoaderData() 
 
   return (
-    <div className="pb-10 bg-page_bg">
+    <div className="pb-10 dark:bg-dark_page_bg bg-page_bg">
       {/* This is home */}
       <HomeSlider></HomeSlider>
       {/* About discy*/}
       <AboutDiscy></AboutDiscy>
       {/* rows/main content */}
       <CustomContainer>
-      <h1 className="text-2xl md:text-3xl font-medium  mb-5 text-custom_blue text-center lg:text-start">Recent Queries</h1>
+      <h1 className="text-2xl md:text-3xl font-medium  mb-5 text-custom_blue text-center lg:text-start dark:text-gray-200">Recent Queries</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* left side */}
           <div className="lg:col-span-2">

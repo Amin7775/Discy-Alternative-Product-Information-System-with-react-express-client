@@ -20,7 +20,7 @@ const MyQueries = () => {
   }, [currentUser]);
   console.log(queriesData);
   return (
-    <div className="min-h-screen bg-page_bg">
+    <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg">
       {/* <img src={customBanner2}  className="w-full" alt="" /> */}
       <div
         className="h-[300px]"

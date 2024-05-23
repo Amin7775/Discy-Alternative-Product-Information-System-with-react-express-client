@@ -33,38 +33,38 @@ const RecommendationsForMe = () => {
   let serial = 0;
 
   return (
-    <div className="min-h-screen bg-page_bg">
+    <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg dark:text-gray-200">
       <Banner heading={"Recommendations for me"}></Banner>
       <CustomContainer>
         <div>
           {loading ? (
             <div className="h-screen w-full flex items-center justify-center">
-              <span className="loading loading-spinner loading-lg"></span>
+              <span className="loading loading-spinner loading-lg" ></span>
             </div>
           ) : (
             <section className="py-10">
               <div className="overflow-x-auto">
                 {loadedData?.length != 0 ? (
-                  <table className="table table-xs md:table-sm lg:table-lg border border-black">
+                  <table className="table table-xs md:table-sm lg:table-lg border border-black dark:border-slate-600">
                     {/* head */}
-                    <thead className="border border-black">
-                      <tr className="border border-black">
-                        <th className="text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">
+                    <thead className="border border-black dark:border-slate-600">
+                      <tr className="border border-black dark:border-gray-500 dark:border-2">
+                        <th className="text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell dark:text-gray-200 ">
                           <label>Serial No</label>
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center dark:text-gray-200">
                           Product Name{" "}
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center ">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center  dark:text-gray-200">
                           Recommender
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell dark:text-gray-200">
                           Recommended
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center hidden sm:table-cell dark:text-gray-200">
                           Time
                         </th>
-                        <th className=" text-xs md:text-sm lg:text-base  text-center">
+                        <th className=" text-xs md:text-sm lg:text-base  text-center dark:text-gray-200">
                           Actions
                         </th>
                       </tr>
@@ -75,7 +75,7 @@ const RecommendationsForMe = () => {
                       {loadedData?.map((singleData) => (
                         <tr
                           key={singleData._id}
-                          className="border border-black"
+                          className="border border-black dark:border-gray-500 dark:border-2"
                         >
                           <th className="hidden sm:table-cell">
                             <label>

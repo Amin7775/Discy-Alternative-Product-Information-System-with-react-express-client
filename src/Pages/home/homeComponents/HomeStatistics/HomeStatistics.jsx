@@ -15,12 +15,12 @@ const HomeStatistics = ({userStats}) => {
     }= userStats
 
     return (
-        <div className="bg-white p-5 rounded-sm">
-            <div className="flex gap-1 items-center ">
+        <div className="bg-white dark:bg-dark_div_bg p-5 rounded-sm">
+            <div className="flex gap-1 items-center dark:text-dark_text_1">
             <ImStatsBars  className=" text-lg font-medium mb-3"></ImStatsBars    > 
-            <h1 className="pb-2 text-lg font-medium"> Our Statistics</h1>
+            <h1 className="pb-2 text-lg font-medium "> Our Statistics</h1>
             </div>
-            <div className=" border-t-2 ">
+            <div className=" border-t-2 dark:border-gray-200">
             {/* main statistics section*/}
             <div className="flex flex-col gap-3 text-white pt-5">
                 {/* Total Queries */}
@@ -52,7 +52,7 @@ const HomeStatistics = ({userStats}) => {
                     </div>
                 </div>
                 {/* Total Users */}
-                <div className="bg-[#333333] flex items-center justify-between p-4 font-medium">
+                <div className="bg-[#333333] dark:bg-slate-500 flex items-center justify-between p-4 font-medium">
                     {/* name */}
                     <div className="flex items-center gap-2 ">
                     <FaRegUser  className="text-lg"></FaRegUser >

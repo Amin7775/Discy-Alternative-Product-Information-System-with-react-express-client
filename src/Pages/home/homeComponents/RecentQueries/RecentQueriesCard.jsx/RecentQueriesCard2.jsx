@@ -19,13 +19,13 @@ const RecentQueriesCard2 = ({query}) => {
       const shortedBoyCottingReason = boycottingReason?.slice(0,105)
     //   console.log(shortedBoyCottingReason,userImg)
     return (
-        <div className="bg-white px-5 lg:px-7 py-5 lg:py-8 flex flex-col-reverse gap-6 rounded-md drop-shadow-sm h-full">
+        <div className="bg-white dark:bg-dark_div_bg dark:text-gray-200 px-5 lg:px-7 py-5 lg:py-8 flex flex-col-reverse gap-6 rounded-md drop-shadow-sm dark:drop-shadow-none h-full">
           <div className="w-full flex-grow flex flex-col justify-between">
             <div>
               {/* user info */}
               <div className="flex gap-2 items-center flex-wrap">
                 <div className="flex gap-2 items-center">
-                  <div className="avatar p-0.5 md:p-1 border-2 rounded-full border-custom_blue ">
+                  <div className="avatar p-0.5 md:p-1 border-2 rounded-full border-custom_blue">
                     <div className="w-9 rounded-full ">
                       <img
                         src={
@@ -36,37 +36,37 @@ const RecentQueriesCard2 = ({query}) => {
                       />
                     </div>
                   </div>
-                  <p className="text-custom_blue font-bold">{userName}</p>
+                  <p className="text-custom_blue dark:text-dark_text_1 font-bold dark:text-lg">{userName}</p>
                 </div>
               </div>
               {/* user info ends */}
     
               <div className="my-2 text-custom_Dark flex flex-col gap-1">
                 <div className="flex gap-5 items-center">
-                  <p className="text-xs font-medium text-slate-500 bg-page_bg px-1 py-0.5 text-wrap">
+                  <p className="text-xs font-medium text-slate-500 bg-page_bg dark:bg-transparent dark:text-gray-300 px-1 py-0.5 text-wrap">
                     Asked on : {submissionTime}
                   </p>
                 </div>
                 {/* query title */}
-                <h1 className="text-xl lg:text-2xl font-medium mt-1 mb-1 ">{queryTitle}</h1>
+                <h1 className="dark:text-gray-200 text-xl lg:text-2xl font-medium mt-1 mb-1 ">{queryTitle}</h1>
                 {/* <h3 className="font-medium  text-gray-600">Product Details - </h3> */}
     
-                <h3 className="text-sm text-wrap md:text-base font-medium text-gray-600">
+                <h3 className="dark:text-gray-300 dark:mt-1 text-sm text-wrap md:text-base font-medium text-gray-600">
                   <span className="font-semibold"> Product Name :</span> {productName}
                 </h3>
-                <h3 className="text-smtext-wrap md:text-base font-medium text-gray-600">
+                <h3 className="dark:text-gray-300 text-smtext-wrap md:text-base font-medium text-gray-600">
                   <span className="font-semibold"> Brand :</span> {productBrand}
                 </h3>
     
-                <h3 className="text-sm text-wrap md:text-base font-medium text-gray-600">
+                <h3 className="dark:text-gray-300 text-sm text-wrap md:text-base font-medium text-gray-600">
                   <span className="font-semibold"> Alternation Reason :</span>{" "}
                 </h3>
-                <p className="text-sm text-wrap md:text-base font-medium text-gray-500">{shortedBoyCottingReason} ...</p>
+                <p className="dark:text-gray-300 text-sm text-wrap md:text-base font-medium text-gray-500">{shortedBoyCottingReason} ...</p>
               </div>
             </div>
             {/* recommendation box */}
-            <div className="bg-page_bg py-5 px-3 md:p-5 flex flex-col md:justify-between mt-2 items-center gap-3">
-              <div className="flex gap-1 px-3 py-2 border bg-white drop-shadow-sm w-full  justify-center">
+            <div className="bg-page_bg dark:bg-slate-500 py-5 px-3 md:p-5 flex flex-col md:justify-between mt-2 items-center gap-3">
+              <div className="flex gap-1 px-3 py-2 border bg-white dark:bg-dark_text_1 dark:text-black drop-shadow-sm w-full  justify-center">
                 <RiQuestionAnswerLine className="text-xl"></RiQuestionAnswerLine>
                 <p className="text-xs md:text-sm font-medium text-wrap text-center">
                   Recommendations : {recommendationCount}
@@ -83,7 +83,7 @@ const RecentQueriesCard2 = ({query}) => {
           </div>
           {/* img section */}
           <div className="w-full lg:flex-1 lg:h-[400px]">
-            <div className="bg-page_bg flex justify-center items-center w-full px-5 py-5">
+            <div className="bg-page_bg dark:bg-slate-500 flex justify-center items-center w-full px-5 py-5">
               <img src={productImage} alt="" className="object-contain" />
             </div>
           </div>

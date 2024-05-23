@@ -130,12 +130,12 @@ const Register = () => {
   };
 
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-page_bg">
+    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-page_bg dark:bg-dark_page_bg">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <div className="bg-custom_Dark p-5 w-20 rounded-full mx-auto border-2 border-custom_blue">
           <img className="mx-auto h-10 w-auto" src={logoimg} alt="DISCY" />
         </div>
-        <h2 className="mt-4 text-center text-3xl font-bold leading-9 tracking-tight text-custom_blue">
+        <h2 className="mt-4 text-center text-3xl font-bold leading-9 tracking-tight text-custom_blue dark:text-gray-200">
           Create A New Account
         </h2>
       </div>
@@ -144,7 +144,7 @@ const Register = () => {
         <form className="space-y-6" onSubmit={handleSubmit}>
           {/* name */}
           <div>
-            <label className="block text-base font-medium leading-6 text-gray-900">
+            <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
               Name<span className="text-xs">*</span>
             </label>
             <div className="mt-2">
@@ -153,6 +153,7 @@ const Register = () => {
                 name="name"
                 type="text"
                 required
+                placeholder="Enter name"
                 className="block w-full rounded-md border-0 py-2 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-custom_blue sm:text-sm sm:leading-6 px-3"
               />
             </div>
@@ -160,7 +161,7 @@ const Register = () => {
 
           {/* email */}
           <div>
-            <label className="block text-base font-medium leading-6 text-gray-900">
+            <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
               Email address<span className="text-xs">*</span>
             </label>
             <div className="mt-2">
@@ -170,6 +171,7 @@ const Register = () => {
                 type="email"
                 autoComplete="email"
                 required
+                placeholder="Enter email"
                 className="block w-full rounded-md border-0 py-2 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-custom_blue sm:text-sm sm:leading-6 px-3"
               />
             </div>
@@ -179,7 +181,7 @@ const Register = () => {
             <div className="flex items-center justify-between">
               <label
                 htmlFor="password"
-                className="block text-base font-medium leading-6 text-gray-900"
+                className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200"
               >
                 Password<span className="text-xs">*</span>
               </label>
@@ -196,13 +198,14 @@ const Register = () => {
                 type="password"
                 autoComplete="current-password"
                 required
+                placeholder="Enter password"
                 className="block w-full rounded-md border-0 py-2 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-custom_blue sm:text-sm sm:leading-6 px-3"
               />
             </div>
           </div>
           {/* photoURL */}
           <div>
-            <label className="block text-base font-medium leading-6 text-gray-900">
+            <label className="block text-base font-medium leading-6 text-gray-900 dark:text-gray-200">
               Photo Url
             </label>
             <div className="mt-2">
@@ -210,6 +213,7 @@ const Register = () => {
                 id="photo"
                 name="photoURL"
                 type="text"
+                placeholder="Enter photo url"
                 //   required
                 className="block w-full rounded-md border-0 py-2 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-custom_blue sm:text-sm sm:leading-6 px-3"
               />
@@ -219,7 +223,7 @@ const Register = () => {
           <div>
             <button
               type="submit"
-              className="flex w-full justify-center rounded-md bg-custom_blue px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-custom_Dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom_blue transition-all duration-300 ease-in-out"
+              className="flex w-full justify-center rounded-md bg-custom_blue px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-custom_Dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom_blue transition-all duration-300 ease-in-out dark:hover:bg-slate-500"
             >
               Register
             </button>
@@ -230,7 +234,7 @@ const Register = () => {
 
         <button
           onClick={handleGoogle}
-          className="flex w-full justify-center rounded-md bg-[#0F9D58] px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-custom_Dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom_blue transition-all duration-300 ease-in-out"
+          className="flex w-full justify-center rounded-md bg-[#0F9D58] px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-custom_Dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom_blue transition-all duration-300 ease-in-out dark:hover:bg-slate-500"
         >
           Register With Google
         </button>
@@ -238,7 +242,7 @@ const Register = () => {
           Already a member?{" "}
           <Link
             to={"/login"}
-            className="font-semibold leading-6 text-custom_blue hover:text-custom_Dark"
+            className="font-semibold leading-6 text-custom_blue hover:text-custom_Dark dark:hover:text-slate-500"
           >
             Login
           </Link>

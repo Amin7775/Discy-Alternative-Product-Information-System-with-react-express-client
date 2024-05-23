@@ -11,7 +11,7 @@ const QueryDetails = () => {
   // const param = useParams()
   // console.log(param)
   return (
-    <div className="min-h-screen bg-page_bg">
+    <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg dark:text-gray-200">
       <CustomContainer>
         {/* query details details */}
         <QueryDetailsCard query={loadedData}></QueryDetailsCard>

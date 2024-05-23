@@ -16,7 +16,7 @@ const ShowRecommendation = ({ query }) => {
   console.log(recommendations)
 
   return (
-    <div className="bg-white px-6 md:px-10 py-8  rounded-md drop-shadow-sm">
+    <div className="bg-white px-6 md:px-10 py-8  rounded-md drop-shadow-sm dark:bg-dark_div_bg">
       <h1 className="text-xl md:text-2xl text-center font-medium">
         Recommendations
       </h1>

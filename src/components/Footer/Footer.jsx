@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
     return (
-        <div className="bg-custom_Dark pt-20 pb-10">
+        <div className="bg-custom_Dark pt-20 pb-10 dark:border-t dark:border-gray-500">
           {/* links container */}
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5  mb-5 px-5">
             {/* store information */}

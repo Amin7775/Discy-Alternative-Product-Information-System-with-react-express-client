@@ -5,8 +5,8 @@ import QueryChampionsCard from './QueryChampionsCard';
 const QueryChampions = ({queryStats}) => {
     console.log(queryStats)
     return (
-        <div className="bg-white p-5 rounded-sm">
-            <div className="flex gap-2 items-center ">
+        <div className="bg-white dark:bg-dark_div_bg p-5 rounded-sm">
+            <div className="flex gap-2 items-center dark:text-dark_text_1">
             <FaTrophy  className=" text-lg font-medium mb-2"></FaTrophy    > 
             <h1 className="pb-2 text-lg font-medium"> Query Champions</h1>
             </div>

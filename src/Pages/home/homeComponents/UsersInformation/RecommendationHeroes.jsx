@@ -6,9 +6,9 @@ import RecommendationHeroesCard from "./RecommendationHeroesCard";
 const RecommendationHeroes = ({recommendationStats}) => {
     console.log(recommendationStats)
     return (
-        <div className="bg-white p-5 rounded-sm">
-            <div className="flex gap-1 items-center ">
-            <GiNinjaHeroicStance  className=" text-xl font-medium mb-3"></GiNinjaHeroicStance    > 
+        <div className="bg-white dark:bg-dark_div_bg p-5 rounded-sm">
+            <div className="flex gap-1 items-center dark:text-dark_text_1">
+            <GiNinjaHeroicStance  className=" text-xl dark:text-2xl font-medium mb-3"></GiNinjaHeroicStance    > 
             <h1 className="pb-2 text-lg font-medium"> Recommendation Heroes</h1>
             </div>
             <div className=" border-t-2 "></div>

@@ -35,7 +35,7 @@ const Queries = () => {
     setGridLayout(number);
   };
   return (
-    <div className="min-h-screen bg-page_bg">
+    <div className="min-h-screen bg-page_bg dark:bg-dark_page_bg">
       <div>
         <Banner heading={"All Queries"}></Banner>
       </div>
@@ -43,10 +43,10 @@ const Queries = () => {
       <CustomContainer>
         {/* search bar */}
         <div className="">
-          <div className="flex justify-center mt-5 mb-1">
+          <div className="flex justify-center mt-5 mb-1 ">
             <form
               onSubmit={handleSearch}
-              className="w-full lg:w-1/2 border border-gray-400 rounded-md drop-shadow-sm"
+              className="w-full lg:w-1/2 border border-gray-400 rounded-md drop-shadow-sm dark:drop-shadow-none dark:outline-white dark:border-2 dark:rounded-lg"
             >
               <div className="flex">
                 <input
@@ -55,7 +55,7 @@ const Queries = () => {
                   className="text-lg py-2  rounded-l-md rounded-r-none px-5 w-full focus:outline-1 "
                   placeholder="Search by product name"
                 />
-                <button className="px-5 rounded-r-md rounded-l-none bg-custom_Dark text-white w-1/3 md:w-1/4 hover:bg-custom_blue transition-all duration-300 ease-in-out">
+                <button className="px-5 rounded-r-md rounded-l-none bg-custom_Dark dark:bg-custom_blue text-white w-1/3 md:w-1/4 hover:bg-custom_blue dark:hover:bg-slate-500 transition-all duration-300 ease-in-out">
                   Search
                 </button>
               </div>
@@ -66,12 +66,12 @@ const Queries = () => {
           </p>
         </div>
         <div className="mt-1 mb-6 flex justify-between items-center">
-          <p className="text-end text-sm font-medium text-slate-500 opacity-80">
+          <p className="text-end text-sm font-medium text-slate-500 dark:text-slate-400 opacity-80">
             Showing {queries.length} queries
           </p>
           {/* layout */}
           <div className="flex items-center gap-2">
-            <p className="text-sm font-medium text-slate-500 opacity-80">
+            <p className="text-sm font-medium text-slate-500 dark:text-slate-400 opacity-80">
               Change View :
             </p>
             <div>
@@ -79,7 +79,7 @@ const Queries = () => {
                 onClick={() => handleLayout(1)}
                 className={`${
                   gridLayout == 1 ? "bg-custom_Dark" : "bg-custom_blue"
-                }  text-white  p-1 rounded-md hover:bg-custom_Dark transition-all duration-300 transform scale-105`}
+                }  text-white  p-1 rounded-md hover:bg-custom_Dark transition-all duration-300 transform scale-105 dark:border-gray-500 dark:border`}
               >
                 <CiGrid2H className="text-xl font-extrabold"></CiGrid2H>
               </button>
@@ -89,7 +89,7 @@ const Queries = () => {
                 onClick={() => handleLayout(2)}
                 className={`${
                   gridLayout == 2 ? "bg-custom_Dark" : "bg-custom_blue"
-                }  text-white  p-1 rounded-md hover:bg-custom_Dark transition-all duration-300 transform scale-105`}
+                }  text-white  p-1 rounded-md hover:bg-custom_Dark transition-all duration-300 transform scale-105 dark:border-gray-600 dark:border`}
               >
                 <CiGrid2V className="text-xl font-extrabold"></CiGrid2V>
               </button>

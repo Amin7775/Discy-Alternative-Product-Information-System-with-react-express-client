@@ -61,7 +61,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-custom_Dark py-2">
+    <div className="bg-custom_Dark py-2 dark:border-b dark:border-gray-500">
       <div className="navbar  lg:max-w-7xl mx-auto text-white">
         <div className="navbar-start">
           <div className="dropdown">
