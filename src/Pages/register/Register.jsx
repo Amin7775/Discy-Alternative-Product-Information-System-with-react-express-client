@@ -13,7 +13,7 @@ const Register = () => {
   // context
   const { createUser, googleLogin, updateUser } = useContext(AuthContext);
   // user registration time
-  const registerTime = moment().format("do MMM YYYY, h:mma");
+  const registerTime = moment().format('Do MMMM YYYY, h:mm a');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,8 +57,9 @@ const Register = () => {
                 .post("http://localhost:5000/users", registerInfo)
                 .then((res) => {
                   // console.log("DB update success", res);
+                  navigate(location?.state ? location?.state : '/')
+                
                 });
-                navigate(location?.state ? location?.state : '/')
             });
           })
           .catch((error) => {

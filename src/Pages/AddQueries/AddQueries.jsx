@@ -13,8 +13,8 @@ const AddQueries = () => {
   // context
   const { user } = useContext(AuthContext);
   // moment js time
-  const submissionTime = moment().format("do MMM YYYY, h:mma");
-
+  let submissionTime = moment().format('Do MMMM YYYY, h:mm a');
+  console.log(submissionTime)
   // handle submit action
   const handleSubmit = (e) => {
     e.preventDefault();

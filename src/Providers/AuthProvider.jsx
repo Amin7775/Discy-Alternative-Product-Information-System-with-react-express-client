@@ -67,6 +67,7 @@ const AuthProvider = ({ children }) => {
         axios.post('http://localhost:5000/jwt',loggedUser,{withCredentials:true})
         .then(res=>{
           console.log(res.data)
+          setLoading(false);
         })
       }else{
         axios.post('http://localhost:5000/logout',loggedUser,{withCredentials:true})
@@ -75,7 +76,7 @@ const AuthProvider = ({ children }) => {
         })
       }
       
-      setLoading(false);
+      
     });
     return () => {
       unsubscribe();

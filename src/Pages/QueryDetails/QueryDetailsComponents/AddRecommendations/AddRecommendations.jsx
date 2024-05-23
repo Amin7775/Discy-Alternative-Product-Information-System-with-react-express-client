@@ -11,7 +11,7 @@ const AddRecommendations = ({ query }) => {
   const { _id, userName, userEmail, productName } = query;
 
   // moment js time
-  const recommendationSubmissionTime = moment().format("do MMM YYYY, h:mma");
+  const recommendationSubmissionTime = moment().format('Do MMMM YYYY, h:mm a');
 
   const handleSubmit = (e) => {
     e.preventDefault();

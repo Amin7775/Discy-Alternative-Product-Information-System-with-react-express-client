@@ -4,7 +4,7 @@ import customBanner2 from "./../../assets/images/Banner/customBanner2.svg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../Providers/AuthProvider";
-import OneColumnCard from "../../components/QueriCards/OneColumnCard/OneColumnCard";
+// import OneColumnCard from "../../components/QueriCards/OneColumnCard/OneColumnCard";
 import MyQueriesCard from "./MyQueriesComponents/MyQueriesCard";
 import { Helmet } from "react-helmet-async";
 

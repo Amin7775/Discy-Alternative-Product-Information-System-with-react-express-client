@@ -19,18 +19,18 @@ const Right = () => {
             const data = res.data
             setUserStats(data)
         })
-        //for query champions
-        axios.get("http://localhost:5000/users/sortQuery")
-        .then(res=>{
-            const data = res.data
-            setQueryStats(data)
-        })
-        //for recommendation heroes
-        axios.get("http://localhost:5000/users/sortRecommendations")
-        .then(res=>{
-            const data = res.data
-            setRecommendationStats(data)
-        })
+        // //for query champions
+        // axios.get("http://localhost:5000/users/sortQuery")
+        // .then(res=>{
+        //     const data = res.data
+        //     setQueryStats(data)
+        // })
+        // //for recommendation heroes
+        // axios.get("http://localhost:5000/users/sortRecommendations")
+        // .then(res=>{
+        //     const data = res.data
+        //     setRecommendationStats(data)
+        // })
 
     },[])
     // const {

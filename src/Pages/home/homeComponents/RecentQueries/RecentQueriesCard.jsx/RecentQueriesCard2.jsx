@@ -16,7 +16,7 @@ const RecentQueriesCard2 = ({query}) => {
         recommendationCount,
       } = query;
 
-      const shortedBoyCottingReason = boycottingReason?.slice(0,105)
+      const shortedBoyCottingReason = boycottingReason?.slice(0,130)
     //   console.log(shortedBoyCottingReason,userImg)
     return (
         <div className="bg-white dark:bg-dark_div_bg dark:text-gray-200 px-5 lg:px-7 py-5 lg:py-8 flex flex-col-reverse gap-6 rounded-md drop-shadow-sm dark:drop-shadow-none h-full">

@@ -1,5 +1,5 @@
 
-import RecentQueriesCard from "./RecentQueriesCard.jsx/RecentQueriesCard";
+// import RecentQueriesCard from "./RecentQueriesCard.jsx/RecentQueriesCard";
 import RecentQueriesCard2 from "./RecentQueriesCard.jsx/RecentQueriesCard2";
 
 const RecentQueries = ({loadedQueries}) => {
