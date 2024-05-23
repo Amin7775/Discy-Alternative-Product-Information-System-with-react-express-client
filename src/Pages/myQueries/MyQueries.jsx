@@ -58,7 +58,7 @@ const MyQueries = () => {
           <>
             <div className="grid grid-cols-1 gap-4">
               {queriesData?.map((query) => (
-                <MyQueriesCard key={query._id} query={query}></MyQueriesCard>
+                <MyQueriesCard key={query._id} query={query} queriesData={queriesData} setQueriesData={setQueriesData}></MyQueriesCard>
               ))}
             </div>
           </>

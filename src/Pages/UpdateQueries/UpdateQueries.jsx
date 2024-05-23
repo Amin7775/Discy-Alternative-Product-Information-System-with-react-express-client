@@ -1,12 +1,17 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Banner from "../../components/Banner/Banner";
 import CustomContainer from "../../components/Container/CustomContainer";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const UpdateQueries = () => {
   const loadedData = useLoaderData();
   const params = useParams()
-  console.log(params)
+  // console.log(params)
+
+  // const location = useLocation()
+  const navigate = useNavigate()
+
   const {
     productName,
     productBrand,
@@ -35,7 +40,22 @@ const UpdateQueries = () => {
 
     axios.patch(`http://localhost:5000/queries/update/${params?.productId}`, submitInfo).
     then((res) => {
-      console.log(res)
+      // console.log(res)
+      Swal.fire({
+        title: "Update Success",
+        showDenyButton: true,
+        // showCancelButton: true,
+        confirmButtonText: "Go to My Queries",
+        denyButtonText: `Update again`
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          navigate("/myqueries")
+        } else if (result.isDenied) {
+          window.location.reload()
+        }
+      });
+
     });
     //   form.reset();
   };

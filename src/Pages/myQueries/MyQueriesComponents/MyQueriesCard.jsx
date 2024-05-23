@@ -1,8 +1,9 @@
 import axios from "axios";
 import { RiQuestionAnswerLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const MyQueriesCard = ({query}) => {
+const MyQueriesCard = ({query,queriesData,setQueriesData}) => {
     const {
         _id,
         userName,
@@ -21,7 +22,20 @@ const MyQueriesCard = ({query}) => {
     const handleDelete = id =>{
         axios.delete(`http://localhost:5000/queries/delete/${id}`)
         .then(res => {
-            console.log(res)
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Deleted Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          })
+          .then(()=>{
+            // console.log(queriesData)
+            // console.log(id)
+            const filterData = queriesData?.filter(data => data._id != id)
+            // console.log(filterData)
+            setQueriesData(filterData)
+          })
         })
     }
     return (
