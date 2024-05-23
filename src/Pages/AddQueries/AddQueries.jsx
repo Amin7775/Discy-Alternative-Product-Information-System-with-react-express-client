@@ -17,7 +17,7 @@ const AddQueries = () => {
     const form = e.target;
     const productName = form.productName.value;
     const productBrand = form.productBrand.value;
-    const productImage = form.productImage.value;
+    const productImage = form.productImage.value || "https://i.ibb.co/9sNq2GK/macbook-pro.jpg";
     const queryTitle = form.queryTitle.value;
     const boycottingReason = form.boycottingReason.value;
 
