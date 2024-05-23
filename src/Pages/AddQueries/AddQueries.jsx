@@ -4,8 +4,11 @@ import CustomContainer from "../../components/Container/CustomContainer";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddQueries = () => {
+  const navigate = useNavigate()
   // context
   const { user } = useContext(AuthContext);
    // moment js time
@@ -42,8 +45,21 @@ const AddQueries = () => {
     let currentUser = { email: user?.email };
     axios.patch("http://localhost:5000/users/query", currentUser).then(() => {
       //console.log(res)
+      Swal.fire({
+        title: "Query Added Successfully",
+        showDenyButton: true,
+        // showCancelButton: true,
+        confirmButtonText: "Go to My Queries",
+        denyButtonText: `Add Another`
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          navigate("/myqueries")
+        } else if (result.isDenied) {
+          form.reset()
+        }
+      });
     });
-    form.reset()
   };
  
   return (
