@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 import moment from "moment";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const AddRecommendations = ({ query }) => {
   // user
@@ -53,8 +54,18 @@ const AddRecommendations = ({ query }) => {
     const queryID = {
       Qid : _id
     }
-    axios.patch("http://localhost:5000/queries", queryID).then((res) => {
-    //   console.log("from queries update", res);
+    axios.patch("http://localhost:5000/queries", queryID)
+    .then((res) => {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Recommendation Added Successfully",
+        showConfirmButton: false,
+        timer: 1500
+      })
+      .then(()=>{
+        window.location.reload()
+      })
     });
   };
   return (
