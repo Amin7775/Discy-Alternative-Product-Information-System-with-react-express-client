@@ -22,17 +22,22 @@ const Register = () => {
         const photoURL = form.photoURL.value
         const name = form.name.value
         
-        const registerInfo = {
-            name,email,registerTime,totalQueries : 0,
-            totalRecommendations : 0 
-        }
-        console.log(registerInfo)
-
+        // const registerInfo = {
+        //   name,email,registerTime,totalQueries : 0,
+        //   totalRecommendations : 0 
+        // }
+        // console.log(registerInfo)
+        
         createUser(email,password)
         .then(res => {
-            // update user
-            updateUser(name,photoURL)
-            .then(()=>{
+          // update user
+          updateUser(name,photoURL)
+          .then(()=>{
+              const image = photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
+              const registerInfo = {
+                name,email,registerTime,image,totalQueries : 0,
+                totalRecommendations : 0 
+              }
                 console.log("Update User Success", res)
                 axios.post('http://localhost:5000/users',registerInfo)
                 .then((res) => {
@@ -55,9 +60,13 @@ const Register = () => {
         googleLogin()
         .then(res =>{
             console.log(res.user)
+            const image = res?.user?.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg";
+
+            // console.Console(image)
             const registerInfo = {
               name : res?.user?.displayName,
               email: res?.user?.email,
+              image ,
               registerTime,
               totalQueries : 0,
               totalRecommendations : 0 
@@ -93,7 +102,7 @@ const Register = () => {
             {/* name */}
             <div>
               <label className="block text-base font-medium leading-6 text-gray-900">
-                Name
+                Name<span className='text-xs'>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -109,7 +118,7 @@ const Register = () => {
             {/* email */}
             <div>
               <label className="block text-base font-medium leading-6 text-gray-900">
-                Email address
+                Email address<span className='text-xs'>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -126,7 +135,7 @@ const Register = () => {
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-base font-medium leading-6 text-gray-900">
-                  Password
+                  Password<span className='text-xs'>*</span>
                 </label>
                 {/* <div className="text-sm">
                   <a href="#" className="font-semibold text-custom_blue hover:text-custom_Dark">
