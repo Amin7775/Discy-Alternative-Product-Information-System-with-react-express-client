@@ -83,7 +83,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-custom_Dark rounded-box w-52 opacity-90"
+              className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-custom_Dark rounded-box w-52 opacity-90 dark:bg-slate-500"
               id="sidebar"
             >
               {/* links */}
@@ -134,7 +134,7 @@ const Navbar = () => {
             {user && (
               <ul
                 tabIndex={0}
-                className="menu dropdown-content z-[10] p-2 shadow rounded-box w-52 mt-4 bg-custom_Dark"
+                className="menu dropdown-content z-[10] p-2 shadow rounded-box w-52 mt-4 bg-custom_Dark dark:bg-slate-500"
               >
                 <li className="font-bold">
                   <Link to={"/myqueries"}>My Queries</Link>
