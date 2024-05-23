@@ -11,7 +11,7 @@ const Banner = ({ heading }) => {
         backgroundSize: "cover",
       }}
     >
-      <h1 className="text-center text-4xl font-medium">{heading}</h1>
+      <h1 className="text-center text-3xl md:text-4xl font-medium text-wrap px-5">{heading}</h1>
     </div>
   );
 };

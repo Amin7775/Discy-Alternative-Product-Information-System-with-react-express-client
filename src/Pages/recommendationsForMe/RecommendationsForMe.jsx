@@ -115,26 +115,21 @@ const RecommendationsForMe = () => {
                         </tr>
                       ))}
                     </tbody>
-                    {/* foot */}
-                    {/* <tfoot>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                </tfoot> */}
                   </table>
-                ) :
-                <>
-                <div className=" min-h-[40vh] w-full flex items-center justify-center mt-10">
-            <div className="min-h-full ">
-                <p className="text-lg md:text-2xl font-medium text-center">You have not received any recommendations yet!</p>
-                <p className="text-lg md:text-2xl font-medium text-center mt-2">Please wait for recommendations</p>
-            </div>
-            </div>
-            </>}
+                ) : (
+                  <>
+                    <div className=" min-h-[40vh] w-full flex items-center justify-center mt-10">
+                      <div className="min-h-full ">
+                        <p className="text-lg md:text-2xl font-medium text-center">
+                          You have not received any recommendations yet!
+                        </p>
+                        <p className="text-lg md:text-2xl font-medium text-center mt-2">
+                          Please wait for recommendations
+                        </p>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </section>
           )}
