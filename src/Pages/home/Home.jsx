@@ -20,7 +20,7 @@ const Home = () => {
       <AboutDiscy></AboutDiscy>
       {/* rows/main content */}
       <CustomContainer>
-      <h1 className="text-2xl md:text-3xl font-medium  mb-5 text-custom_blue">Recent Queries</h1>
+      <h1 className="text-2xl md:text-3xl font-medium  mb-5 text-custom_blue text-center lg:text-start">Recent Queries</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* left side */}
           <div className="lg:col-span-2">
