@@ -6,9 +6,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../Providers/AuthProvider";
 
-
 const MyRecommendations = () => {
-    const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
   let { user } = useContext(AuthContext);
   let currentEmail = user?.email;
@@ -17,7 +16,9 @@ const MyRecommendations = () => {
   // load data
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/recommendations/myRecommendations?email=${currentEmail}`)
+      .get(
+        `http://localhost:5000/recommendations/myRecommendations?email=${currentEmail}`
+      )
       .then((res) => {
         setLoadedData(res.data);
       });
@@ -33,9 +34,26 @@ const MyRecommendations = () => {
   }, []);
   let serial = 0;
 
+  //   handleDelete
+  const handleDelete = (id,StatsQueryID) => {
+    console.log("clicked", id);
+    axios
+      .delete(`http://localhost:5000/recommendations/delete/${id}`)
+      .then((res) => {
+        console.log(res);
+        const remaining = loadedData.filter((data) => data._id != id);
+        setLoadedData(remaining,);
+        const queryID = {
+            Qid : StatsQueryID
+          }
+          axios.patch("http://localhost:5000/queries/decrement", queryID).then((res) => {
+            console.log("from queries update", res);
+          });
+      });
+  };
 
-    return (
-        <div className="min-h-screen bg-page_bg">
+  return (
+    <div className="min-h-screen bg-page_bg">
       <Banner heading={"Recommendations for me"}></Banner>
       <CustomContainer>
         <div>
@@ -110,11 +128,12 @@ const MyRecommendations = () => {
                           </td>
                           <td>
                             <div className="flex justify-center">
-                              <Link to={`/queryDetails/${singleData?.queryID}`}>
-                                <button className="btn bg-custom_Dark text-white hover:bg-custom_blue transition-all ease-in-out duration-300 text-xs md:text-sm font-medium ">
-                                 Delete
-                                </button>
-                              </Link>
+                              <button
+                                onClick={() => handleDelete(singleData._id,singleData.queryID)}
+                                className="btn bg-custom_Dark text-white hover:bg-custom_blue transition-all ease-in-out duration-300 text-xs md:text-sm font-medium "
+                              >
+                                Delete
+                              </button>
                             </div>
                           </td>
                           <td>
@@ -150,7 +169,7 @@ const MyRecommendations = () => {
         </div>
       </CustomContainer>
     </div>
-    );
+  );
 };
 
 export default MyRecommendations;
