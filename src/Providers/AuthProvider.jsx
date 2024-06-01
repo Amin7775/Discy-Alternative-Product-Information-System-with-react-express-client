@@ -61,13 +61,14 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       const userEmail = currentUser?.email || user?.email;
       const loggedUser = {email : userEmail}
+      setLoading(false);
       setUser(currentUser);
       if(currentUser){
         // const loggedUser={email : currentUser?.email}
+        setLoading(false);
         axios.post('https://discy-server.vercel.app/jwt',loggedUser,{withCredentials:true})
         .then(res=>{
           // console.log(res.data)
-          setLoading(false);
         })
       }else{
         axios.post('https://discy-server.vercel.app/logout',loggedUser,{withCredentials:true})

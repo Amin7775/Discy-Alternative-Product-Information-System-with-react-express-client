@@ -53,6 +53,9 @@ const Navbar = () => {
       ) : (
         <>
           <li className="font-bold">
+            <NavLink to={"/myqueries"}>My Queries</NavLink>
+          </li>
+          <li className="font-bold">
             <NavLink to={"/login"}>Login</NavLink>
           </li>
         </>
