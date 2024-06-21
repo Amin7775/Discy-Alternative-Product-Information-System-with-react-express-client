@@ -2,13 +2,6 @@ import connectImg from './../../../../assets/images/illustrations/undraw_online_
 
 const AboutDiscy = () => {
 
-  const handleBtn = () =>{
-    console.log("Clicked")
-  }
-
-
-
-
   return (
     <div className="max-w-[88%] md:max-w-2xl lg:max-w-6xl xl:max-w-7xl  mx-auto pt-5 pb-2 dark:text-gray-200">
       <h1 className="text-4xl font-medium text-center my-5">
@@ -26,8 +19,6 @@ const AboutDiscy = () => {
         immerse yourself in to query experience that transcends the ordinary.
         Step in and uncover the perfect alternatives for you.
       </p>
-      <button onClick={()=>handleBtn()} className='btn bg-custom_blue px-7 py-2'>more info</button>
-
         </div>
         <div className='border-2 dark:border-gray-200 dark:border-0 mx-auto lg:mx-0'>
         <img src={connectImg} alt="" />
