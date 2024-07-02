@@ -1,36 +1,26 @@
 # Project Title - Discy
 ## Project Link : [https://discy-b9-a11.web.app/]
 
-Built with    | 
-------------  |   
-React JS      |  
-Tailwind Css  |  
-Daisy UI      | 
-Firebase      | 
-Express js    | 
-MongoDB       | 
-JWT           | 
+### Technologies User :
+
+React JS, Tailwind Css, Daisy UI, Firebase, Express js, MongoDB, JWT, 
 
 ##
 
-Discy is an 'Alternative Product Information System' focused website. Here users can add/update/delete their queries about any product. Others can view these queries and suggest alternative products. 
+Discy is an 'Alternative Product Information System' focused website . Discy is an alternative product management system . It focuses on suggesting alternative products based on queries . Here users can add/update/delete their queries about any product . Others can view these queries and suggest alternative products. 
 
 
 ## Some of the Features of the project:
-- Search functionality 
-- Real time data load 
-- Responsive for all devices
-- Dark and light theme
-- Login/register using any email, google account  
-- Alerts for key functionalities. With this the website become more interactive for the users as they get notified for everything they do. 
+- Search functionality : Users can search for products from all queries page. 
+- Different Theme: Both Dark and light theme is available so that users can keep their preference theme while using Discy. 
+- Recommendations: Users can recommend alternative product to others and at the same time get recommended product suggestions from others. 
 
-## Some of the npm Packages that are used on this project:
-- Swiper js
-- React Helmet
-- Moment js
-- react-icons
-- sweetalert2
-- axios
+## To Run This Project
+
+- Prerequisites : Node.js and Git installed in the computer.
+- Clone the Repository - "Git Clone:clone link"
+- Install dependencies - "npm install"
+- Run Project - "npm run dev"
 
 
 
