@@ -5,7 +5,7 @@
 
 React JS, Tailwind Css, Daisy UI, Firebase, Express js, MongoDB, JWT, 
 
-##
+## About Discy
 
 Discy is an 'Alternative Product Information System' focused website . Discy is an alternative product management system . It focuses on suggesting alternative products based on queries . Here users can add/update/delete their queries about any product . Others can view these queries and suggest alternative products. 
 
